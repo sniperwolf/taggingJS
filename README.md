@@ -26,7 +26,7 @@ The `data-name="tag"` is the class used for every single tag inside the type_zon
 1. Write `grunt` to execute the default script (without minification), `grunt dist` to also minify the script.
 
 You can find a working example in [Codepen.io](http://codepen.io/sniperwolf/pen/geFxq/)
-or in the project's [GitHub page]().
+or in the project's [GitHub page](http://sniperwolf.github.io/taggingJS/).
 
 ## Browser Support ##
 
