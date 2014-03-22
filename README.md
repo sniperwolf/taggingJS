@@ -1,5 +1,7 @@
 # taggingJS #
 
+[![Build Status](https://travis-ci.org/sniperwolf/taggingJS.svg?branch=master)](https://travis-ci.org/sniperwolf/taggingJS)
+
 ## jQuery plugin to tagging like a charm! ##
 
 jQuery plugin to create a simple and high customizable front-end tag system.
