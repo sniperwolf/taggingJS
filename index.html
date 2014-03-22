@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+	<title>taggingJS</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="//code.jquery.com/jquery-latest.min.js"></script>
+
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="example/screen.css" rel="stylesheet">
+	<link href="example/tag-basic-style.css" rel="stylesheet">
+	<link href='//fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+
+	<!--[if lt IE 9]>
+		<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+
+<div class="container">
+
+	<h1>taggingJS</h1>
+
+	<h3>jQuery plugin to tagging like a charm!</h3>
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="blockquote-box blockquote-info clearfix">
+				<div class="square pull-left">
+					<span class="glyphicon glyphicon-info-sign glyphicon-lg"></span>
+				</div>
+				<h4>Information</h4>
+				<p>
+					Supports all major browsers in the world (<code>IE 6+</code>, <code>Mozilla Firefox 1+</code>, <code>Google Chrome 1+</code>, <code>Safari 5.1+</code>).
+				</p>
+			</div>
+			<div class="blockquote-box blockquote-warning clearfix">
+				<div class="square pull-left">
+					<span class="glyphicon glyphicon-ok glyphicon-lg"></span>
+				</div>
+				<h4>Customizable</h4>
+				<p>
+					Easily customizable for every need.
+				</p>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="blockquote-box clearfix">
+				<div class="square pull-left">
+					<span class="glyphicon glyphicon-road glyphicon-lg"></span>
+				</div>
+				<h4>Simple</h4>
+				<p>
+					It's a kind of magic! Just use <code>$('#input_zone').tagging();</code>
+				</p>
+			</div>
+			<div class="blockquote-box blockquote-success clearfix">
+				<div class="square pull-left">
+					<span class="glyphicon glyphicon-tree-conifer glyphicon-lg"></span>
+				</div>
+				<h4>Enviroment</h4>
+				<p>
+					Developed with respect for the environment.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- The example Code -->
+	<div class="example-wrapper">
+		<div class="tags well">
+			<label for="tag" class="control-label">Tag</label>
+			<div data-name="tag" id="tag">preexisting-tag</div>
+			<p class="help-block">Press Enter or Comma to create a new tag, Backspace or Delete to remove the last one.</p>
+		</div>
+	</div>
+
+	<!-- GitHub stars -->
+	<div id="github-btn">
+		<iframe src="http://ghbtns.com/github-btn.html?user=sniperwolf&repo=taggingJS&type=watch&count=true&size=large"
+			allowtransparency="true" frameborder="0" scrolling="0" width="170" height="30"></iframe>
+	</div>
+
+	<footer>
+		&copy; 2014 <a href="https://github.com/sniperwolf">Fabrizio Fallico (Sniper Wolf)</a>. <a href="LICENSE.md">License</a>
+	</footer>
+
+	<!-- GitHub badge - https://github.com/blog/273-github-ribbons -->
+	<a href="https://github.com/sniperwolf/taggingJS"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"></a>
+
+	<!-- Don't forget to include taggingJS! -->
+	<script src="example/tagging.js"></script>
+</div>
+
+</body>
+</html>
