@@ -16,9 +16,9 @@ jQuery plugin to create a simple and high customizable front-end tag system.
 1. Include `<script src="path/to/tagging.min.js"></script>` to the bottom of your page;
 1. *Optional* - Include the basic CSS tag style `<link href="tag-basic-style.css" rel="stylesheet">` to the `<head>` of your page;
 1. Write in your page something like `<div data-name="tag" id="fooTagField">preexisting-tag</div>`;
-1. Add to your main JavaScript file `$('#fooTagField').tagging();` to implement it;
+1. Add to your main JavaScript file `$("#fooTagField").tagging();` to implement it;
 
-The `data-name="tag"` is the class used for every single tag inside the type_zone.
+The `data-name="tag"` is the class used for every single tag inside the `fooTagField`.
 
 ### Contribute - With Grunt & co. ###
 
