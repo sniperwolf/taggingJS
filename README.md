@@ -189,18 +189,18 @@ Array of forbidden characters.
 There are several ways to customize the behavior of taggingJS:
 
 1. Use a JavaScript `object` to customize the global taggingJS behavior
-(see [First Way](#first-way---global-object);
+(see [First Way](#first-way---global-object));
 
 2. Use `data-*` attributes in the `tagBox` HTML Markup
-(see [Second Way](#second-way---data-attributes);
+(see [Second Way](#second-way---data-attributes));
 
 3. Use a combination of the first two way
-(see [Third Way](#third-way---mixed-way);
+(see [Third Way](#third-way---mixed-way));
 
-**N.B.**: Be careful! `data-*` has a higher priority than the passed object,
-because each `data-*` overwrite also the global behavior.
+**N.B.**: Be careful! `data-*` attributes has an higher priority than the `custom_options` object,
+because each `data-*` attribute overwrite the global behavior.
 In other words, the global settings work for all tags box captured, unless in
-these are specified `data-*` tag (*which may change the behavior*).
+these are specified `data-*` attributes (*which may change the behavior*).
 
 ####  First Way - Global Object ####
 
