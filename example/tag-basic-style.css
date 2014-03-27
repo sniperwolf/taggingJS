@@ -29,12 +29,12 @@
 .tag .tag-i {
 	color: white;
 	cursor: pointer;
-	font-size: 1em;
+	font-size: 1.3em;
 	height: 0;
 	line-height: 0.1em;
 	position: absolute;
 	right: 5px;
-	top: 1em;
+	top: 0.7em;
 	text-align: center;
 	width: 10px;
 }
@@ -45,6 +45,7 @@
 }
 
 .type-zone {
+	border: 0 none;
 	height: auto;
 	width: auto;
 	min-width: 20px;
