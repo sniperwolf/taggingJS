@@ -154,7 +154,7 @@ Single Tag class.
 
 Type: `String`
 
-Default: `&times;`
+Default: `"&times;"`
 
 Single Tag close character.
 
@@ -226,6 +226,7 @@ Default: `true`
 #### forbidden-chars ####
 
 Type: `Array`
+
 Default: `[",", ".", "_", "?"]`
 
 Array of forbidden characters.
