@@ -35,7 +35,7 @@ In other words, the global settings work for all tags box captured, unless in th
 
 ### Available Options ###
 
-#1 - All of these options can be passed as an object...
+`#1` - All of these options can be passed as an object...
 
     default_options = {
         "no-duplicate": true,
@@ -60,7 +60,7 @@ In other words, the global settings work for all tags box captured, unless in th
 
 ... and then add to your main JavaScript file `$("#tagBox").tagging(default_options);` to implement it.
 
-#2 - Or can be specified inside tag box as `data-*` parameters, like:
+`#2` - Or can be specified inside tag box as `data-*` parameters, like:
 
     <div
         data-no-duplicate="true"
