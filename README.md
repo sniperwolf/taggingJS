@@ -10,6 +10,9 @@ jQuery plugin to create a simple and high customizable front-end tag system.
 
 ## Getting Started ##
 
+You can find a working example in [Codepen.io](http://codepen.io/sniperwolf/pen/geFxq/)
+or in the project's [GitHub page](http://sniperwolf.github.io/taggingJS/).
+
 ### Simplest ###
 
 1. Download the `tagging.min.js` file from this repository;
@@ -32,7 +35,7 @@ In other words, the global settings work for all tags box captured, unless in th
 
 ### Available Options ###
 
-All of these options can be passed as an object...
+#1 - All of these options can be passed as an object...
 
 	default_options = {
 		"no-duplicate": true,
@@ -57,7 +60,7 @@ All of these options can be passed as an object...
 
 ... and then add to your main JavaScript file `$("#tagBox").tagging(default_options);` to implement it.
 
-Or can be specified inside tag box as `data-*` parameters, like:
+#2 - Or can be specified inside tag box as `data-*` parameters, like:
 
 	<div
 		data-no-duplicate="true"
@@ -233,9 +236,6 @@ Array of forbidden characters.
 1. Open a shell in project's directory;
 1. Write `npm install` on it (make sure you have installed [nodeJS](nodejs.org));
 1. Write `grunt` to execute the default script (without minification), `grunt dist` to also minify the script (make sure you have installed [Grunt](gruntjs.com)).
-
-You can find a working example in [Codepen.io](http://codepen.io/sniperwolf/pen/geFxq/)
-or in the project's [GitHub page](http://sniperwolf.github.io/taggingJS/).
 
 #### Syntax ####
 
