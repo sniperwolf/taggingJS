@@ -6,6 +6,8 @@
 
 jQuery plugin to create a simple and high customizable front-end tag system. It is only `2.5 kb`!
 
+Actual version is **1.1**.
+
 ![Example Image](example/example_img.png)
 
 ## Getting Started ##
@@ -204,7 +206,6 @@ these are specified `data-*` tag (*which may change the behavior*).
 
 1. Create a custom options `object`, like this `my_custom_options`:
 
-		```
 		my_custom_options = {
 				"no-duplicate": true,
 				"pre-tags-separator": "\n",
@@ -225,19 +226,14 @@ these are specified `data-*` tag (*which may change the behavior*).
 				"edit-on-delete": true,
 				"forbidden-chars": [",", ".", "_", "?"]
 		};
-		```
 
 1. Create a tag box (or multiple tag box) like this:
 
-		```
 		<div id="tagBox">preexisting-tag</div>
-		```
 
 1. Add to your main JavaScript file:
 
-		```
 		$("#tagBox").tagging(my_custom_options);
-		```
 
 In this way, we customize the **global behavior** of taggingJS for
 **all tag box** caught with selector.
@@ -246,7 +242,6 @@ In this way, we customize the **global behavior** of taggingJS for
 
 1. Create a tag box with some `data-*` attributes, like this:
 
-		```
 		<div
 				data-no-duplicate="true"
 				data-pre-tags-separator="\n"
@@ -265,13 +260,10 @@ In this way, we customize the **global behavior** of taggingJS for
 				data-no-spacebar="true"
 				data-edit-on-delete="true"
 		id="tagBox">preexisting-tag</div>
-		```
 
 1. Add to your main JavaScript file:
 
-		```
 		$("#tagBox").tagging();
-		```
 
 **N.B.**: Use data method with `no-duplicate-callback` and `forbidden-chars`
 can cause some problems. Avoid it.
@@ -283,56 +275,51 @@ behavior depending on what tag box works with.
 
 1. Create a tag box with some `data-*` attributes, like this:
 
-		```
-		<div
+		<div class="tag-box"
 				data-no-duplicate="true"
 				data-tags-input-name="tag"
-		id="tagBox1" class="tag-box">preexisting-tag</div>
-		```
+		id="tagBox1">preexisting-tag</div>
 
 1. Create another tag box with no `data-*` attributes:
 
-		```
 		<div id="tagBox1" class="tag-box">preexisting-tag</div>
-		```
 
 1. Create a custom options `object`, like this `my_custom_options`:
 
-		```
 		my_custom_options = {
 				"no-duplicate": false,
 				"tags-input-name": "taggone",
 				"edit-on-delete": false,
 		};
-		```
 
 1. Add to your main JavaScript file
 
-		```
 		$(".tag-box").tagging(my_custom_options);
-		```
 
 Now you can see that:
 
 1. The `#tagBox1` has a behavior that overwrite some `my_custom_options` options:
 
-		- Does not accept duplicate tag (*for the respective `data` attribute*);
-		- For each tag, it has `tag` as input name (*for the respective `data` attribute*);
-		- On delete, the tag is completely removed (*for the `my_custom_options`*);
+  - Does not accept duplicate tag (*for the respective `data` attribute*);
+	- For each tag, it has `tag` as input name (*for the respective `data` attribute*);
+	- On delete, the tag is completely removed (*for the `my_custom_options`*);
 
 1. The `#tagBox2` has a behavior dictated only by `my_custom_options`:
 
-		- Accept duplicate tag (*for the `my_custom_options`*);
-		- For each tag, it has `tag` as input name (*for the `my_custom_options`*);
-		- On delete, the tag is completely removed (*for the `my_custom_options`*);
+	- Accept duplicate tag (*for the `my_custom_options`*);
+	- For each tag, it has `tag` as input name (*for the `my_custom_options`*);
+	- On delete, the tag is completely removed (*for the `my_custom_options`*);
 
 ## Contribute ##
 
 ### Setup nodeJS and Grunt ###
 
 1. Clone the repository;
+
 1. Open a shell in project's directory;
+
 1. Write `npm install` on it (make sure you have installed [nodeJS](nodejs.org));
+
 1. Write `grunt` to execute the default script (without minification),
 `grunt dist` to also minify the script (make sure you have installed [Grunt](gruntjs.com)).
 
