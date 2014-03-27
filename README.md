@@ -10,6 +10,9 @@ jQuery plugin to create a simple and high customizable front-end tag system.
 
 ## Getting Started ##
 
+You can find a working example in [Codepen.io](http://codepen.io/sniperwolf/pen/geFxq/)
+or in the project's [GitHub page](http://sniperwolf.github.io/taggingJS/).
+
 ### Simplest ###
 
 1. Download the `tagging.min.js` file from this repository;
@@ -233,9 +236,6 @@ Array of forbidden characters.
 1. Open a shell in project's directory;
 1. Write `npm install` on it (make sure you have installed [nodeJS](nodejs.org));
 1. Write `grunt` to execute the default script (without minification), `grunt dist` to also minify the script (make sure you have installed [Grunt](gruntjs.com)).
-
-You can find a working example in [Codepen.io](http://codepen.io/sniperwolf/pen/geFxq/)
-or in the project's [GitHub page](http://sniperwolf.github.io/taggingJS/).
 
 #### Syntax ####
 
