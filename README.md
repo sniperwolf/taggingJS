@@ -27,11 +27,11 @@ your page;
 your page;
 
 1. Write in your page something like
-`<div data-input-name="tag" id="tagBox">preexisting-tag</div>`;
+`<div data-tags-input-name="tag" id="tagBox">preexisting-tag</div>`;
 
 1. Add to your main JavaScript file `$("#tagBox").tagging();` to implement it;
 
-The `data-input-name="tag"` is the name used for every single input
+The `data-tags-input-name="tag"` is the name used for every single input
 inside the `tagBox`.
 
 ### Available Options ###
