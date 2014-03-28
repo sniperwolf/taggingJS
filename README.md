@@ -54,7 +54,7 @@ these are specified `data` attributes (*which may change the behavior*).
 
 ####  First Way - Global Object ####
 
-1. Create a custom options `object`, like this `my_custom_options` (see [Available Options](#available-options), for possible options):
+1. Create a custom options `object`, like this `my_custom_options` (see [Available Options](#available-options)):
 
 		my_custom_options = {
 				"no-duplicate": true,
@@ -78,7 +78,7 @@ In this way, we customize the **global behavior** of taggingJS for
 
 ### Second Way - Data Attributes ###
 
-1. Create a tag box with some `data` attributes, like this (see [Available Options](#available-options), for possible options):
+1. Create a tag box with some `data` attributes, like this (see [Available Options](#available-options)):
 
 		<div
 				data-no-duplicate="true"
@@ -111,7 +111,7 @@ In this way, we mix data attributes and options object to customize taggingJS be
 
 		<div id="tagBox1" class="tag-box">preexisting-tag</div>
 
-1. Create a custom options `object`, like this `my_custom_options` (see [Available Options](#available-options), for possible options):
+1. Create a custom options `object`, like this `my_custom_options` (see [Available Options](#available-options)):
 
 		my_custom_options = {
 				"no-duplicate": false,
