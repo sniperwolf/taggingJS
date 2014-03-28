@@ -6,7 +6,7 @@
 
 jQuery plugin to create a simple and high customizable front-end tag system. It is only `2.5 kb`!
 
-Actual version is **1.1**.
+Actual version is `1.1`.
 
 ![Example Image](example/example_img.png)
 
@@ -34,7 +34,111 @@ your page;
 The `data-tags-input-name="tag"` is the name used for every single input
 inside the `tagBox`.
 
-### Available Options ###
+###  Customize ###
+
+There are several ways to customize the behavior of taggingJS:
+
+1. Use a JavaScript `object` to customize the global taggingJS behavior
+(see [First Way](#first-way---global-object));
+
+2. Use `data-*` attributes in the `tagBox` HTML Markup
+(see [Second Way](#second-way---data-attributes));
+
+3. Use a combination of the first two way
+(see [Third Way](#third-way---mixed-way));
+
+**N.B.**: Be careful! `data` attributes has an higher priority than the `custom_options` object,
+because each `data` attribute overwrite the global behavior.
+In other words, the global settings work for all tags box captured, unless in
+these are specified `data` attributes (*which may change the behavior*).
+
+####  First Way - Global Object ####
+
+1. Create a custom options `object`, like this `my_custom_options` (see [Available Options](#available-options), for possible options):
+
+		my_custom_options = {
+				"no-duplicate": true,
+				"no-duplicate-callback": window.alert,
+				"no-duplicate-text": "Duplicate tags",
+				"type-zone-class": "type-zone",
+				"tag-box-class": "tagging",
+				"forbidden-chars": [",", ".", "_", "?"]
+		};
+
+1. Create a tag box (or multiple tag box) like this:
+
+		<div id="tagBox">preexisting-tag</div>
+
+1. Add to your main JavaScript file:
+
+		$("#tagBox").tagging(my_custom_options);
+
+In this way, we customize the **global behavior** of taggingJS for
+**all tag box** caught with selector.
+
+### Second Way - Data Attributes ###
+
+1. Create a tag box with some `data` attributes, like this (see [Available Options](#available-options), for possible options):
+
+		<div
+				data-no-duplicate="true"
+				data-pre-tags-separator="\n"
+				data-no-duplicate-text="Duplicate tags"
+				data-type-zone-class="type-zone"
+				data-tag-box-class="tagging"
+				data-edit-on-delete="true"
+		id="tagBox">preexisting-tag</div>
+
+1. Add to your main JavaScript file:
+
+		$("#tagBox").tagging();
+
+**N.B.**: Use data method with `no-duplicate-callback` and `forbidden-chars`
+can cause some problems. Avoid it.
+
+### Third Way - Mixed Way ###
+
+In this way, we mix data attributes and options object to customize taggingJS behavior for each tag box.
+
+1. Create a tag box with some `data` attributes, like this:
+
+		<div class="tag-box"
+				data-no-duplicate="true"
+				data-tags-input-name="tag"
+		id="tagBox1">preexisting-tag</div>
+
+1. Create another tag box with no `data` attributes:
+
+		<div id="tagBox1" class="tag-box">preexisting-tag</div>
+
+1. Create a custom options `object`, like this `my_custom_options` (see [Available Options](#available-options), for possible options):
+
+		my_custom_options = {
+				"no-duplicate": false,
+				"tags-input-name": "taggone",
+				"edit-on-delete": false,
+		};
+
+1. Add to your main JavaScript file
+
+		$(".tag-box").tagging(my_custom_options);
+
+Now you can see that:
+
+1. The `#tagBox1` has a behavior that overwrite some `my_custom_options` options:
+
+  - Does not accept duplicate tag (*for the respective `data` attribute*);
+  - For each tag, it has `tag` as input name (*for the respective `data` attribute*);
+  - On delete, the tag is completely removed (*for the `my_custom_options`*);
+
+1. The `#tagBox2` has a behavior dictated only by `my_custom_options`:
+
+  - Accept duplicate tag (*for the `my_custom_options`*);
+  - For each tag, it has `tag` as input name (*for the `my_custom_options`*);
+  - On delete, the tag is completely removed (*for the `my_custom_options`*);
+
+
+## Available Options ##
 
 Below, little description, `type`, and default value of all the available options:
 
@@ -183,132 +287,6 @@ Type: `Array`
 Default: `[",", ".", "_", "?"]`
 
 Array of forbidden characters.
-
-###  Customize ###
-
-There are several ways to customize the behavior of taggingJS:
-
-1. Use a JavaScript `object` to customize the global taggingJS behavior
-(see [First Way](#first-way---global-object));
-
-2. Use `data-*` attributes in the `tagBox` HTML Markup
-(see [Second Way](#second-way---data-attributes));
-
-3. Use a combination of the first two way
-(see [Third Way](#third-way---mixed-way));
-
-**N.B.**: Be careful! `data-*` attributes has an higher priority than the `custom_options` object,
-because each `data-*` attribute overwrite the global behavior.
-In other words, the global settings work for all tags box captured, unless in
-these are specified `data-*` attributes (*which may change the behavior*).
-
-####  First Way - Global Object ####
-
-1. Create a custom options `object`, like this `my_custom_options`:
-
-		my_custom_options = {
-				"no-duplicate": true,
-				"pre-tags-separator": "\n",
-				"no-duplicate-callback": window.alert,
-				"no-duplicate-text": "Duplicate tags",
-				"type-zone-class": "type-zone",
-				"tag-box-class": "tagging",
-				"tag-char": "#",
-				"tag-class": "tag",
-				"close-char": "&times;",
-				"close-class": "tag-i",
-				"tags-input-name": "tag",
-				"no-del": false,
-				"no-backspace": false,
-				"no-comma": false,
-				"no-enter": false,
-				"no-spacebar": true,
-				"edit-on-delete": true,
-				"forbidden-chars": [",", ".", "_", "?"]
-		};
-
-1. Create a tag box (or multiple tag box) like this:
-
-		<div id="tagBox">preexisting-tag</div>
-
-1. Add to your main JavaScript file:
-
-		$("#tagBox").tagging(my_custom_options);
-
-In this way, we customize the **global behavior** of taggingJS for
-**all tag box** caught with selector.
-
-####  Second Way - Data Attributes ####
-
-1. Create a tag box with some `data-*` attributes, like this:
-
-		<div
-				data-no-duplicate="true"
-				data-pre-tags-separator="\n"
-				data-no-duplicate-text="Duplicate tags"
-				data-type-zone-class="type-zone"
-				data-tag-box-class="tagging"
-				data-tag-char="#"
-				data-tag-class="tag"
-				data-close-char="&times;"
-				data-close-class="tag-i"
-				data-tags-input-name="tag"
-				data-no-del="false"
-				data-no-backspace="false"
-				data-no-comma="false"
-				data-no-enter="false"
-				data-no-spacebar="true"
-				data-edit-on-delete="true"
-		id="tagBox">preexisting-tag</div>
-
-1. Add to your main JavaScript file:
-
-		$("#tagBox").tagging();
-
-**N.B.**: Use data method with `no-duplicate-callback` and `forbidden-chars`
-can cause some problems. Avoid it.
-
-####  Third Way - Mixed Way ####
-
-In this way, we mix data attributes and global object to customize taggingJS
-behavior depending on what tag box works with.
-
-1. Create a tag box with some `data-*` attributes, like this:
-
-		<div class="tag-box"
-				data-no-duplicate="true"
-				data-tags-input-name="tag"
-		id="tagBox1">preexisting-tag</div>
-
-1. Create another tag box with no `data-*` attributes:
-
-		<div id="tagBox1" class="tag-box">preexisting-tag</div>
-
-1. Create a custom options `object`, like this `my_custom_options`:
-
-		my_custom_options = {
-				"no-duplicate": false,
-				"tags-input-name": "taggone",
-				"edit-on-delete": false,
-		};
-
-1. Add to your main JavaScript file
-
-		$(".tag-box").tagging(my_custom_options);
-
-Now you can see that:
-
-1. The `#tagBox1` has a behavior that overwrite some `my_custom_options` options:
-
-  - Does not accept duplicate tag (*for the respective `data` attribute*);
-	- For each tag, it has `tag` as input name (*for the respective `data` attribute*);
-	- On delete, the tag is completely removed (*for the `my_custom_options`*);
-
-1. The `#tagBox2` has a behavior dictated only by `my_custom_options`:
-
-	- Accept duplicate tag (*for the `my_custom_options`*);
-	- For each tag, it has `tag` as input name (*for the `my_custom_options`*);
-	- On delete, the tag is completely removed (*for the `my_custom_options`*);
 
 ## Contribute ##
 
