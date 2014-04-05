@@ -17,38 +17,37 @@ or in the project's [GitHub page](http://sniperwolf.github.io/taggingJS/).
 
 ### Simplest ###
 
-1. Download the `tagging.min.js` file from this repository;
+1. **Download** the `tagging.min.js` file from this repository;
 
-1. Include `<script src="path/to/tagging.min.js"></script>` to the bottom of
+1. **Include** `<script src="path/to/tagging.min.js"></script>` to the bottom of
 your page;
 
 1. *Optional* - Include the basic CSS tag style
 `<link href="tag-basic-style.css" rel="stylesheet">` to the `<head>` of
 your page;
 
-1. Write in your page something like
+1. Add to your page something like
 `<div data-tags-input-name="tag" id="tagBox">preexisting-tag</div>`;
 
-1. Add to your main JavaScript file `$("#tagBox").tagging();` to implement it;
+1. Add to your main JavaScript file `$("#tagBox").tagging();`;
 
-The `data-tags-input-name="tag"` is the name used for every single input
+The `data-tags-input-name="tag"` is the `name` attribute used by each input
 inside the `tagBox`.
 
 ###  Customize ###
 
-There are several ways to customize the behavior of taggingJS:
+There are several ways to customize the default behavior of taggingJS:
 
-1. Use a JavaScript `object` to customize the global taggingJS behavior
+1. Use a JavaScript `custom_options` object to customize the global taggingJS behavior
 (see [First Way](#first-way---global-object));
 
-2. Use `data-*` attributes in the `tagBox` HTML Markup
+2. Use `data` attributes in the `tagBox` HTML Markup
 (see [Second Way](#second-way---data-attributes));
 
 3. Use a combination of the first two way
 (see [Third Way](#third-way---mixed-way));
 
-**N.B.**: Be careful! `data` attributes has an higher priority than the `custom_options` object,
-because each `data` attribute overwrite the global behavior.
+**N.B.**: Be careful! `data` attributes have an higher priority than the `custom_options` object, because each `data` attribute overwrite the global behavior.
 In other words, the global settings work for all tags box captured, unless in
 these are specified `data` attributes (*which may change the behavior*).
 
@@ -56,7 +55,7 @@ these are specified `data` attributes (*which may change the behavior*).
 
 1. Create a custom options `object`, like this `my_custom_options` (see [Available Options](#available-options)):
 
-		my_custom_options = {
+		var my_custom_options = {
 				"no-duplicate": true,
 				"no-duplicate-callback": window.alert,
 				"no-duplicate-text": "Duplicate tags",
@@ -76,7 +75,7 @@ these are specified `data` attributes (*which may change the behavior*).
 In this way, we customize the **global behavior** of taggingJS for
 **all tag box** caught with selector.
 
-### Second Way - Data Attributes ###
+#### Second Way - Data Attributes ####
 
 1. Create a tag box with some `data` attributes, like this (see [Available Options](#available-options)):
 
@@ -96,7 +95,7 @@ In this way, we customize the **global behavior** of taggingJS for
 **N.B.**: Use data method with `no-duplicate-callback` and `forbidden-chars`
 can cause some problems. Avoid it.
 
-### Third Way - Mixed Way ###
+#### Third Way - Mixed Way ####
 
 In this way, we mix data attributes and options object to customize taggingJS behavior for each tag box.
 
@@ -113,7 +112,7 @@ In this way, we mix data attributes and options object to customize taggingJS be
 
 1. Create a custom options `object`, like this `my_custom_options` (see [Available Options](#available-options)):
 
-		my_custom_options = {
+		var my_custom_options = {
 				"no-duplicate": false,
 				"tags-input-name": "taggone",
 				"edit-on-delete": false,
@@ -290,15 +289,15 @@ Array of forbidden characters.
 
 ## Contribute ##
 
-### Setup nodeJS and Grunt ###
+### Set Up nodeJS and Grunt ###
 
-1. Clone the repository;
+1. Fork the repository;
 
 1. Open a shell in project's directory;
 
-1. Write `npm install` on it (make sure you have installed [nodeJS](nodejs.org));
+1. Type `npm install` (make sure you have installed [nodeJS](nodejs.org));
 
-1. Write `grunt` to execute the default script (without minification),
+1. Type `grunt` to execute the default script (without minification),
 `grunt dist` to also minify the script (make sure you have installed [Grunt](gruntjs.com)).
 
 ### JavaScript Style Guide ###
