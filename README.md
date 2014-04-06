@@ -357,7 +357,7 @@ please follow it you too :D
 
 ## Requirements ##
 
-- **jQuery** (`1.7.X` or more, also `2.X` works);
+- **jQuery** (`1.5.X` or more, also `2.X` works);
 
 ## Browser Support ##
 
