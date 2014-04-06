@@ -1,6 +1,3 @@
-taggingJS
-   2014-03-22
-
 Copyright (c) 2014 Fabrizio Fallico
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
