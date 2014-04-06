@@ -43,7 +43,7 @@
             "forbidden-chars": [",", ".", "_", "?"],        // Array of forbidden characters
             "forbidden-chars-callback": window.alert,       // Function to call when there is a forbidden chars
             "forbidden-chars-text": "Forbidden character:", // Basic text passed to forbidden-chars callback
-            "forbidden-words": [],                          // Array of forbidden words
+            "forbidden-words": ["forbidden"],               // Array of forbidden words
             "forbidden-words-callback": window.alert,       // Function to call when there is a forbidden words
             "forbidden-words-text": "Forbidden word:",      // Basic text passed to forbidden-words callback
             "no-backspace": false,                          // Backspace key remove last tag, true to avoid that
@@ -417,9 +417,9 @@
 })( window.jQuery, window, document );
 
 // jQuery on Ready example
-// (function( $, window, document ) {
-//     $( document ).ready(function() {
-//         var t = $( "#tag" ).tagging();
-//         console.log( t.addClass( "form-control" ) );
-//     });
-// })( window.jQuery, window, document );
+(function( $, window, document ) {
+    $( document ).ready(function() {
+        var t = $( "#tag" ).tagging();
+        console.log( t.addClass( "form-control" ) );
+    });
+})( window.jQuery, window, document );
