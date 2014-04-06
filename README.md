@@ -138,8 +138,6 @@ Now you may see that:
 	- For each tag, it has `tag` as input name (*for the `my_custom_options`*);
 	- On delete, the tag is completely removed (*for the `my_custom_options`*);
 
--------------
-
 ## Available Options ##
 
 Below there are the **available options to customize taggingJS** with a
@@ -339,8 +337,6 @@ Default: `"type-zone"`
 
 Class of the type-zone.
 
--------------
-
 ## Contribute ##
 
 ### Set Up nodeJS and Grunt ###
@@ -359,26 +355,18 @@ Class of the type-zone.
 I follow the [jQuery's JavaScript style guide](https://contribute.jquery.org/style-guide/js/),
 please follow it you too :D
 
--------------
-
 ## Requirements ##
 
 - **jQuery** (`1.7.X` or more, also `2.X` works);
-
--------------
 
 ## Browser Support ##
 
 Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 `Google Chrome 1+`, `Safari 5.1+`).
 
--------------
-
 ## License ##
 
 (C) Fabrizio Fallico 2014, released under the [MIT license](LICENSE.md).
-
--------------
 
 ## Changelog ##
 
