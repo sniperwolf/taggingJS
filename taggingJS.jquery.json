@@ -1,0 +1,38 @@
+{
+    "name": "taggingjs",
+    "title": "taggingJS",
+    "description": "jQuery plugin to tagging like a charm!",
+    "keywords": [
+        "tags",
+        "input",
+        "form",
+        "ui",
+        "jquery"
+    ],
+    "version": "1.2",
+    "author": {
+        "name": "Fabrizio Fallico",
+        "url": "https://github.com/sniperwolf"
+    },
+    "maintainers": [
+        {
+            "name": "Fabrizio Fallico",
+            "email": "gnarf37@gmail.com",
+            "url": "https://github.com/sniperwolf"
+        }
+    ],
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/sniperwolf/taggingJS/blob/master/LICENSE.md"
+        }
+    ],
+    "bugs": "https://github.com/sniperwolf/taggingJS/issues",
+    "homepage": "https://github.com/sniperwolf/taggingJS",
+    "demo": "http://sniperwolf.github.io/taggingJS",
+    "docs": "https://github.com/sniperwolf/taggingJS/blob/master/README.md",
+    "download": "https://github.com/sniperwolf/taggingJS/blob/master/tagging.min.js",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
