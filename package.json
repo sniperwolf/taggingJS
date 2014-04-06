@@ -1,6 +1,6 @@
 {
   "name": "taggingJS",
-  "version": "1.0.0",
+  "version": "1.2.3",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-cli": "~0.1.13",
