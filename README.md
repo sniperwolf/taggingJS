@@ -7,7 +7,7 @@
 **taggingJS** is a jQuery plugin to create an high customizable front-end tag system.
 It is less than `2.5 kb` and [support major browsers](#browser-support) in the world!
 
-Actual version is `1.2`.
+Actual version is `1.2.0`.
 
 ![Example Image](example/example_img.png)
 
@@ -370,7 +370,7 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 
 ## Changelog ##
 
-### 1.2 - [Apr 06, 2014]
+### 1.2.0 - [Apr 06, 2014]
 
 * Add `case-sensitive` option to
 * Add `forbidden-words` option to block some words inside a tag, with callback and text;
@@ -378,6 +378,7 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 * Fixed `i.handler.apply is not function` bug;
 * Updated README.md with all Available Options;
 * Improved code formatting;
+* Passed to [Semantic Versioning](http://semver.org/).
 * Minor fix;
 
 ### 1.1 - [Mar 27, 2014]
