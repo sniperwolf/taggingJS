@@ -42,7 +42,7 @@
             "close-char": "&times;",                        // Single Tag close char
             "close-class": "tag-i",                         // Single Tag close class
             "edit-on-delete": true,                         // True to edit tag that has just been removed from tag box
-            "forbidden-chars": [ ".", "_", "?" ],           // Array of forbidden characters
+            "forbidden-chars": [ "," , ".", "_", "?" ],     // Array of forbidden characters
             "forbidden-chars-callback": window.alert,       // Function to call when there is a forbidden chars
             "forbidden-chars-text": "Forbidden character:", // Basic text passed to forbidden-chars callback
             "forbidden-words": [],                          // Array of forbidden words
@@ -378,38 +378,34 @@
                         }
                     }
 
-                    // Check if there are forbidden chars
+                    // For loop to remove Forbidden Chars from Text
                     l = forbidden_chars.length;
-                    if ( l !== 0 ) {
+                    for ( i = 0; i < l; i += 1 ) {
 
-                        // For loop to remove Forbidden Chars from Text
-                        for ( i = 0; i < l; i += 1 ) {
+                        // Looking for a forbidden char
+                        index = actual_text.indexOf( forbidden_chars[ i ] );
 
-                            // Looking for a forbidden char
-                            index = actual_text.indexOf( forbidden_chars[ i ] );
+                        // There is a forbidden text
+                        if ( index !== -1 ) {
 
-                            // There is a forbidden text
-                            if ( index !== -1 ) {
+                            // Prevent Default
+                            e.preventDefault();
 
-                                // Prevent Default
-                                e.preventDefault();
+                            // Removing Forbidden Char
+                            actual_text = actual_text.replace( forbidden_chars[ i ], "" );
 
-                                // Removing Forbidden Char
-                                actual_text = actual_text.replace( forbidden_chars[ i ], "" );
+                            // Update type_zone text
+                            $type_zone
+                                .focus()
+                                .val( "" )
+                                .val( actual_text );
 
-                                // Update type_zone text
-                                $type_zone
-                                    .focus()
-                                    .val( "" )
-                                    .val( actual_text );
+                            // Renaiming
+                            callback_f = data_settings[ "forbidden-chars-callback" ];
+                            callback_t = data_settings[ "forbidden-chars-text" ];
 
-                                // Renaiming
-                                callback_f = data_settings[ "forbidden-chars-callback" ];
-                                callback_t = data_settings[ "forbidden-chars-text" ];
-
-                                // Remove the duplicate
-                                return error( callback_f, callback_t, forbidden_chars[ i ] );
-                            }
+                            // Remove the duplicate
+                            return error( callback_f, callback_t, forbidden_chars[ i ] );
                         }
                     }
                 }

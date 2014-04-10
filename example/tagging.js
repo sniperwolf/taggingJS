@@ -378,38 +378,34 @@
                         }
                     }
 
-                    // Check if there are forbidden chars
+                    // For loop to remove Forbidden Chars from Text
                     l = forbidden_chars.length;
-                    if ( l !== 0 ) {
+                    for ( i = 0; i < l; i += 1 ) {
 
-                        // For loop to remove Forbidden Chars from Text
-                        for ( i = 0; i < l; i += 1 ) {
+                        // Looking for a forbidden char
+                        index = actual_text.indexOf( forbidden_chars[ i ] );
 
-                            // Looking for a forbidden char
-                            index = actual_text.indexOf( forbidden_chars[ i ] );
+                        // There is a forbidden text
+                        if ( index !== -1 ) {
 
-                            // There is a forbidden text
-                            if ( index !== -1 ) {
+                            // Prevent Default
+                            e.preventDefault();
 
-                                // Prevent Default
-                                e.preventDefault();
+                            // Removing Forbidden Char
+                            actual_text = actual_text.replace( forbidden_chars[ i ], "" );
 
-                                // Removing Forbidden Char
-                                actual_text = actual_text.replace( forbidden_chars[ i ], "" );
+                            // Update type_zone text
+                            $type_zone
+                                .focus()
+                                .val( "" )
+                                .val( actual_text );
 
-                                // Update type_zone text
-                                $type_zone
-                                    .focus()
-                                    .val( "" )
-                                    .val( actual_text );
+                            // Renaiming
+                            callback_f = data_settings[ "forbidden-chars-callback" ];
+                            callback_t = data_settings[ "forbidden-chars-text" ];
 
-                                // Renaiming
-                                callback_f = data_settings[ "forbidden-chars-callback" ];
-                                callback_t = data_settings[ "forbidden-chars-text" ];
-
-                                // Remove the duplicate
-                                return error( callback_f, callback_t, forbidden_chars[ i ] );
-                            }
+                            // Remove the duplicate
+                            return error( callback_f, callback_t, forbidden_chars[ i ] );
                         }
                     }
                 }
