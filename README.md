@@ -5,9 +5,9 @@
 ## jQuery plugin to tagging like a charm! ##
 
 **taggingJS** is a jQuery plugin to create an high customizable front-end tag system.
-It is less than `2.5 kb` and [support major browsers](#browser-support) in the world!
+It is less than `3 kb` and [support major browsers](#browser-support) in the world!
 
-Actual version is `1.2.0`.
+Actual version is `1.2.4`.
 
 ![Example Image](example/example_img.png)
 
@@ -179,7 +179,7 @@ Default: `true`
 
 Type: `Array`
 
-Default: `[",", ".", "_", "?"]`
+Default: `[".", "_", "?"]`
 
 Array of forbidden characters.
 
@@ -283,18 +283,18 @@ Enter key add a new tag by default, `true` to avoid that.
 
 Type: `Boolean`
 
-Default: `true`
+Default: `false`
 
-Spacebar key **NOT** add a new tag by default. `false` enable.
+Spacebar key add a new tag by default. `true` to avoid that.
 
 #### pre-tags-separator ####
 
 Type: `String`
 
-Default: `"\n"`
+Default: `", "`
 
 This is used to `split` the initial text and add `preexistint-tag`.
-By default, you must put new tags using a new line.
+By default, you must put new tags using a comma and a space (`", "`).
 
 #### tag-box-class ####
 
@@ -370,15 +370,22 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 
 ## Changelog ##
 
-### 1.2.0 - [Apr 06, 2014]
+### 1.2.4 - [Apr 10, 2014]
 
-* Add `case-sensitive` option to
+* Fix #5 issue;
+* Changed `pre-tags-separator`, `no-spacebar` and `forbidden-chars` default value;
+* Improved code formatting;
+
+### 1.2.3 - [Apr 06, 2014]
+
+* Add `case-sensitive` option;
 * Add `forbidden-words` option to block some words inside a tag, with callback and text;
 * Add callback and text to as `forbidden-chars` option;
 * Fixed `i.handler.apply is not function` bug;
 * Updated README.md with all Available Options;
 * Improved code formatting;
-* Passed to [Semantic Versioning](http://semver.org/).
+* Passed to [Semantic Versioning](http://semver.org/);
+* Add taggingJS to jQuery Plugin Registry;
 * Minor fix;
 
 ### 1.1 - [Mar 27, 2014]
