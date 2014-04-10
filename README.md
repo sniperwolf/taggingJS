@@ -370,7 +370,6 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 
 ## Changelog ##
 
-
 ### 1.2.4 - [Apr 06, 2014]
 
 * Fix #5 issue;
@@ -385,7 +384,8 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 * Fixed `i.handler.apply is not function` bug;
 * Updated README.md with all Available Options;
 * Improved code formatting;
-* Passed to [Semantic Versioning](http://semver.org/).
+* Passed to [Semantic Versioning](http://semver.org/);
+* Add taggingJS to jQuery Plugin Registry;
 * Minor fix;
 
 ### 1.1 - [Mar 27, 2014]

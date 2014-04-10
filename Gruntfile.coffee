@@ -27,7 +27,7 @@ module.exports = (grunt) ->
           except: ['jQuery']
       dist:
         files: [
-          { src: ['<%= jsCoreFile %>'],     dest: '<%= jsCoreFileMin %>' } # Core
+          { src: ['<%= jsCoreFile %>'], dest: '<%= jsCoreFileMin %>' }
         ]
 
   # Loading Tasks
