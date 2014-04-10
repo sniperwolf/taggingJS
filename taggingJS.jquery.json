@@ -9,15 +9,16 @@
         "ui",
         "jquery"
     ],
-    "version": "1.2.0",
+    "version": "1.2.4",
     "author": {
         "name": "Fabrizio Fallico",
+        "email": "f.fallico@sparkblog.org",
         "url": "https://github.com/sniperwolf"
     },
     "maintainers": [
         {
             "name": "Fabrizio Fallico",
-            "email": "gnarf37@gmail.com",
+            "email": "f.fallico@sparkblog.org",
             "url": "https://github.com/sniperwolf"
         }
     ],
