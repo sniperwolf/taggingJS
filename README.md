@@ -7,7 +7,7 @@
 **taggingJS** is a jQuery plugin to create an high customizable front-end tag system.
 It is less than `3 kb` and [support major browsers](#browser-support) in the world!
 
-Actual version is `1.2.4`.
+Actual version is `1.2.5`.
 
 ![Example Image](example/example_img.png)
 
@@ -370,7 +370,7 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 
 ## Changelog ##
 
-### 1.2.4 - [Apr 10, 2014]
+### 1.2.5 - [Apr 10, 2014]
 
 * Fix #5 issue;
 * Changed `pre-tags-separator` and `no-spacebar` default value;
