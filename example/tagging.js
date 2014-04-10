@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 // taggingJS v1.2.4
 //    2014-04-10
-=======
-// taggingJS v1.2.3
-//    2014-04-06
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
 // Copyright (c) 2014 Fabrizio Fallico
 
@@ -30,13 +25,9 @@
 
     $.fn.tagging = function(options) {
 
-<<<<<<< HEAD
         var $this,
             settings, default_options,
             tags,
-=======
-        var settings, default_options, $this, tags,
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
             fill_data_options, add_tag, error;
 
         // Saving for very slight optimization
@@ -51,17 +42,10 @@
             "close-char": "&times;",                        // Single Tag close char
             "close-class": "tag-i",                         // Single Tag close class
             "edit-on-delete": true,                         // True to edit tag that has just been removed from tag box
-<<<<<<< HEAD
             "forbidden-chars": [ ".", "_", "?" ],           // Array of forbidden characters
             "forbidden-chars-callback": window.alert,       // Function to call when there is a forbidden chars
             "forbidden-chars-text": "Forbidden character:", // Basic text passed to forbidden-chars callback
             "forbidden-words": [],                          // Array of forbidden words
-=======
-            "forbidden-chars": [",", ".", "_", "?"],        // Array of forbidden characters
-            "forbidden-chars-callback": window.alert,       // Function to call when there is a forbidden chars
-            "forbidden-chars-text": "Forbidden character:", // Basic text passed to forbidden-chars callback
-            "forbidden-words": ["forbidden"],               // Array of forbidden words
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
             "forbidden-words-callback": window.alert,       // Function to call when there is a forbidden words
             "forbidden-words-text": "Forbidden word:",      // Basic text passed to forbidden-words callback
             "no-backspace": false,                          // Backspace key remove last tag, true to avoid that
@@ -71,13 +55,8 @@
             "no-duplicate-callback": window.alert,          // Function to call when there is a duplicate tag
             "no-duplicate-text": "Duplicate tag:",          // Basic text passed to no-duplicate callback
             "no-enter": false,                              // Enter key add a new tag, true to avoid that
-<<<<<<< HEAD
             "no-spacebar": false,                           // Spacebar key add a new tag by default, true to avoid that
             "pre-tags-separator": ", ",                     // By default, you must put new tags using a new line
-=======
-            "no-spacebar": true,                            // Spacebar key NOT add a new tag by default, false to
-            "pre-tags-separator": "\n",                     // By default, you must put new tags using a new line
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
             "tag-box-class": "tagging",                     // Class of the tag box
             "tag-char": "#",                                // Single Tag char
             "tag-class": "tag",                             // Single Tag class
@@ -87,11 +66,7 @@
 
         // Overwriting default settings with Object passed by user
         //   N.B.: These settings work for all tags box captured, unless given specific data attributes.
-<<<<<<< HEAD
         settings = $.extend( {}, default_options, options );
-=======
-        settings = $.extend( default_options, options );
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
         /**
          * Filling data_options with data attributes
@@ -101,17 +76,10 @@
          */
         fill_data_options = function( $actual_tag_box ) {
             var key, data_option, data_options;
-<<<<<<< HEAD
 
             // Here we store all data_options
             data_options = {};
 
-=======
-
-            // Here we store all data_options
-            data_options = {};
-
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
             // For each option
             for ( key in default_options ) {
 
@@ -147,11 +115,7 @@
             );
 
             // We don't add tag
-<<<<<<< HEAD
             return false;
-=======
-            return true;
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
         };
 
         /**
@@ -169,11 +133,7 @@
             actual_settings = actual_settings || settings;
 
             // Forbidden Words shortcut
-<<<<<<< HEAD
             forbidden_words = actual_settings[ "forbidden-words" ];
-=======
-            forbidden_words = actual_settings["forbidden-words"];
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
             // If no text is passed, take it as text of $type_zone and then empty it
             if ( ! text ) {
@@ -183,15 +143,11 @@
 
             // If it is empty too, then go out
             if ( ! text || ! text.length ) {
-                return true;
+                return false;
             }
 
             // If case-sensitive is true, write everything in lowercase
-<<<<<<< HEAD
             if ( actual_settings[ "case-sensitive" ] === false ) {
-=======
-            if ( actual_settings["case-sensitive"] === false ) {
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
                 text = text.toLowerCase();
             }
 
@@ -203,11 +159,7 @@
                 for ( i = 0; i < l; i += 1 ) {
 
                     // Looking for a forbidden words
-<<<<<<< HEAD
                     index = text.indexOf( forbidden_words[ i ] );
-=======
-                    index = text.indexOf( forbidden_words[i] );
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
                     // There is a forbidden word
                     if ( index !== -1 ) {
@@ -216,41 +168,25 @@
                         $type_zone.val( "" );
 
                         // Renaiming
-<<<<<<< HEAD
                         callback_f = actual_settings[ "forbidden-words-callback" ];
                         callback_t = actual_settings[ "forbidden-words-text" ];
 
                         // Remove as a duplicate
                         return error( callback_f, callback_t, text );
-=======
-                        callback_f = actual_settings["forbidden-words-callback"];
-                        callback_t = actual_settings["forbidden-words-text"];
-
-                        // Remove as a duplicate
-                        return error(callback_f, callback_t, text);
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
                     }
                 }
 
             }
 
             // If no-duplicate is true, check that the text is not already present
-<<<<<<< HEAD
             if ( actual_settings[ "no-duplicate" ] === true ) {
-=======
-            if ( actual_settings["no-duplicate"] === true ) {
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
                 // Looking for each text inside tags
                 l = tags.length;
                 if ( l !== 0 ) {
 
                     for ( i = 0; i < l; i += 1 ) {
-<<<<<<< HEAD
                         t = tags[ i ].pure_text;
-=======
-                        t = tags[i].pure_text;
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
                         if ( t === text ) {
 
@@ -258,19 +194,11 @@
                             $type_zone.val( "" );
 
                             // Renaiming
-<<<<<<< HEAD
                             callback_f = actual_settings[ "no-duplicate-callback" ];
                             callback_t = actual_settings[ "no-duplicate-text" ];
 
                             // Remove the duplicate
                             return error( callback_f, callback_t, text );
-=======
-                            callback_f = actual_settings["no-duplicate-callback"];
-                            callback_t = actual_settings["no-duplicate-text"];
-
-                            // Remove the duplicate
-                            return error(callback_f, callback_t, text);
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
                         }
                     }
@@ -286,11 +214,7 @@
             $( document.createElement( "input" ) )
                 .attr( "type", "hidden" )
                 // custom input name
-<<<<<<< HEAD
                 .attr( "name", actual_settings[ "tags-input-name" ] + "[]" )
-=======
-                .attr( "name", actual_settings["tags-input-name"] + "[]" )
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
                 .val( text )
                 .appendTo( $tag );
 
@@ -298,15 +222,9 @@
             $( document.createElement( "a" ) )
                 .attr( "role", "button" )
                 // adding custom class
-<<<<<<< HEAD
                 .addClass( actual_settings[ "close-class" ] )
                 // using custom char
                 .html( actual_settings[ "close-char" ] )
-=======
-                .addClass( actual_settings["close-class"] )
-                // using custom char
-                .html( actual_settings["close-char"] )
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
                 // click addEventListener
                 .click(function() {
                     $tag.remove();
@@ -329,26 +247,16 @@
         // For each 'tag_box' (caught with user's jQuery selector)
         $this.each(function() {
 
-<<<<<<< HEAD
             var init_text, $type_zone, data_settings, $actual_tag_box,
                 add_keys, all_keys, remove_keys; /*KEYS_OBJ, ADD_KEYS_OBJ, REMOVE_KEYS_OBJ,
                 l, i, _i, _l, key_obj;*/
-=======
-            var init_text, $type_zone, data_settings, $actual_tag_box;
-
-            // the actual tagging box
-            $actual_tag_box = $( this );
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
             // the actual tagging box
             $actual_tag_box = $( this );
 
-<<<<<<< HEAD
             // Getting all data Parameters to fully customize the single tag box selecteds
             data_settings = $.extend( {}, settings, fill_data_options( $actual_tag_box ) );
 
-=======
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
             // Pre-existent text
             init_text = $actual_tag_box.text();
 
@@ -383,42 +291,18 @@
 
             // Keydown event listener on type_zone
             $type_zone.on( "keydown", function(e) {
-<<<<<<< HEAD
                 var $last_tag, key, index, i, l,
-=======
-                var $last_tag, key, index, i, l, add_keys, remove_keys,
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
                     forbidden_chars, actual_text, pressed_key,
                     callback_f, callback_t;
 
                 // Forbidden Chars shortcut
-<<<<<<< HEAD
                 forbidden_chars = data_settings[ "forbidden-chars" ];
-=======
-                forbidden_chars = data_settings["forbidden-chars"];
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
                 // Actual text in the type_zone
                 actual_text     = $type_zone.val();
 
                 // The pressed key
                 pressed_key     = e.which;
-<<<<<<< HEAD
-=======
-
-                // Special keys to add a tag
-                add_keys = {
-                    comma:    188,
-                    enter:    13,
-                    spacebar: 32,
-                };
-
-                // Special keys to remove last tag
-                remove_keys = {
-                    del: 46,
-                    backspace: 8,
-                };
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
 
                 // For in loop to look to Remove Keys
                 if ( actual_text === "" ) {
@@ -474,7 +358,6 @@
                     }
                 } else {
 
-<<<<<<< HEAD
                     // For in to look in Add Keys
                     for ( key in add_keys ) {
 
@@ -492,41 +375,6 @@
 
                             // Exit
                             return false;
-=======
-                    // Check if there are forbidden chars
-                    l = forbidden_chars.length;
-                    if ( l !== 0 ) {
-
-                        // For loop to remove Forbidden Chars from Text
-                        for ( i = 0; i < l; i += 1 ) {
-
-                            // Looking for a forbidden char
-                            index = actual_text.indexOf( forbidden_chars[i] );
-
-                            // There is a forbidden text
-                            if ( index !== -1 ) {
-
-                                // Prevent Default
-                                e.preventDefault();
-
-                                // Removing Forbidden Char
-                                actual_text = actual_text.replace( forbidden_chars[i], "" );
-
-
-                                // Update type_zone text
-                                $type_zone
-                                    .focus()
-                                    .val( "" )
-                                    .val( actual_text );
-
-                                // Renaiming
-                                callback_f = data_settings["forbidden-chars-callback"];
-                                callback_t = data_settings["forbidden-chars-text"];
-
-                                // Remove the duplicate
-                                return error(callback_f, callback_t, forbidden_chars[i]);
-                            }
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
                         }
                     }
 
@@ -566,11 +414,8 @@
                     }
                 }
 
-<<<<<<< HEAD
                 // Exit with success
                 return true;
-=======
->>>>>>> 5b60068943e40bd71c5150773d3e6a1672324dc5
             });
 
             // On click, we focus the type_zone
