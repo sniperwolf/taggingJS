@@ -370,7 +370,7 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 
 ## Changelog ##
 
-### 1.2.4 - [Apr 06, 2014]
+### 1.2.4 - [Apr 10, 2014]
 
 * Fix #5 issue;
 * Changed `pre-tags-separator`, `no-spacebar` and `forbidden-chars` default value;
