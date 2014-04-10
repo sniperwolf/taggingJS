@@ -9,11 +9,7 @@
         "ui",
         "jquery"
     ],
-<<<<<<< HEAD:taggingJS.jquery.json
     "version": "1.2.4",
-=======
-    "version": "1.2.3",
->>>>>>> 1cdd5d67a9390e544e7874765e2bf16fd644e529:taggingjs.jquery.json
     "author": {
         "name": "Fabrizio Fallico",
         "email": "f.fallico@sparkblog.org",
