@@ -179,7 +179,7 @@ Default: `true`
 
 Type: `Array`
 
-Default: `[".", "_", "?"]`
+Default: `["," , ".", "_", "?"]`
 
 Array of forbidden characters.
 
@@ -373,7 +373,7 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 ### 1.2.4 - [Apr 10, 2014]
 
 * Fix #5 issue;
-* Changed `pre-tags-separator`, `no-spacebar` and `forbidden-chars` default value;
+* Changed `pre-tags-separator` and `no-spacebar` default value;
 * Improved code formatting;
 
 ### 1.2.3 - [Apr 06, 2014]
