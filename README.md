@@ -144,13 +144,13 @@ In this way, we **mix** data attributes and options object to customize taggingJ
 
 Now you may see that:
 
-1. The `#tagBox1` has a behavior that overwrite some `my_custom_options` options:
+* The `#tagBox1` has a behavior that overwrite some `my_custom_options` options:
 
 	- Does not accept duplicate tag (*for the respective `data` attribute*);
 	- For each tag, it has `tag` as input name (*for the respective `data` attribute*);
 	- On delete, the tag is completely removed (*for the `my_custom_options`*);
 
-1. The `#tagBox2` has a behavior dictated only by `my_custom_options`:
+* The `#tagBox2` has a behavior dictated only by `my_custom_options`:
 
 	- Accept duplicate tag (*for the `my_custom_options`*);
 	- For each tag, it has `tag` as input name (*for the `my_custom_options`*);
