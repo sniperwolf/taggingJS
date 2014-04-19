@@ -20,17 +20,17 @@ or in the project's [GitHub page](http://sniperwolf.github.io/taggingJS/).
 
 1. **Download** the `tagging.min.js` file from this repository;
 
-1. **Include** `<script src="path/to/tagging.min.js"></script>` to the bottom of
+2. **Include** `<script src="path/to/tagging.min.js"></script>` to the bottom of
 your page;
 
-1. *Optional* - Include the basic CSS tag style
+3. *Optional* - Include the basic CSS tag style
 `<link href="tag-basic-style.css" rel="stylesheet">` to the `<head>` of
 your page;
 
-1. **Add** to your page something like
+4. **Add** to your page something like
 `<div data-tags-input-name="tag" id="tagBox">preexisting-tag</div>`;
 
-1. **Add** to your main JavaScript file `$("#tagBox").tagging();`;
+5. **Add** to your main JavaScript file `$("#tagBox").tagging();`;
 
 The `data-tags-input-name="tag"` is the `name` attribute used by each input
 inside the `tagBox`.
@@ -68,13 +68,13 @@ these are specified `data` attributes (*which may change the behavior*).
 	};
 	```
 
-1. **Create a tag box** (or multiple tag box) like this:
+2. **Create a tag box** (or multiple tag box) like this:
 
 	```html
 	<div id="tagBox">preexisting-tag</div>
 	```
 
-1. **Add** to your main JavaScript file:
+3. **Add** to your main JavaScript file:
 
 	```js
 	$("#tagBox").tagging(my_custom_options);
@@ -98,7 +98,7 @@ In this way, we customize the **global behavior** of taggingJS for
 	id="tagBox">preexisting-tag</div>
 	```
 
-1. **Add** to your main JavaScript file:
+2. **Add** to your main JavaScript file:
 
 	```js
 	$("#tagBox").tagging();
@@ -120,13 +120,13 @@ In this way, we **mix** data attributes and options object to customize taggingJ
 	id="tagBox1">preexisting-tag</div>
 	```
 
-1. **Create *another* tag box** with no `data` attributes:
+2. **Create *another* tag box** with no `data` attributes:
 
 	```html
 	<div id="tagBox1" class="tag-box">preexisting-tag</div>
 	```
 
-1. **Create a custom options** `object`, like this `my_custom_options` (see [Available Options](#available-options)):
+3. **Create a custom options** `object`, like this `my_custom_options` (see [Available Options](#available-options)):
 
 	```js
 	var my_custom_options = {
@@ -136,7 +136,7 @@ In this way, we **mix** data attributes and options object to customize taggingJ
 	};
 	```
 
-1. **Add** to your main JavaScript file
+4. **Add** to your main JavaScript file
 
 	```js
 	$(".tag-box").tagging(my_custom_options);
@@ -194,11 +194,11 @@ little description, a `type` and the default value:
 
 1. Fork the repository;
 
-1. Open a shell in project's directory;
+2. Open a shell in project's directory;
 
-1. Type `npm install` (make sure you have installed [nodeJS](nodejs.org));
+3. Type `npm install` (make sure you have installed [nodeJS](nodejs.org));
 
-1. Type `grunt` to execute the default script (without minification),
+4. Type `grunt` to execute the default script (without minification),
 `grunt dist` to also minify the script (make sure you have installed [Grunt](gruntjs.com)).
 
 ### JavaScript Style Guide ###
