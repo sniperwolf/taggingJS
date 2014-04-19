@@ -20,17 +20,17 @@ or in the project's [GitHub page](http://sniperwolf.github.io/taggingJS/).
 
 1. **Download** the `tagging.min.js` file from this repository;
 
-1. **Include** `<script src="path/to/tagging.min.js"></script>` to the bottom of
+2. **Include** `<script src="path/to/tagging.min.js"></script>` to the bottom of
 your page;
 
-1. *Optional* - Include the basic CSS tag style
+3. *Optional* - Include the basic CSS tag style
 `<link href="tag-basic-style.css" rel="stylesheet">` to the `<head>` of
 your page;
 
-1. **Add** to your page something like
+4. **Add** to your page something like
 `<div data-tags-input-name="tag" id="tagBox">preexisting-tag</div>`;
 
-1. **Add** to your main JavaScript file `$("#tagBox").tagging();`;
+5. **Add** to your main JavaScript file `$("#tagBox").tagging();`;
 
 The `data-tags-input-name="tag"` is the `name` attribute used by each input
 inside the `tagBox`.
@@ -68,13 +68,13 @@ these are specified `data` attributes (*which may change the behavior*).
 	};
 	```
 
-1. **Create a tag box** (or multiple tag box) like this:
+2. **Create a tag box** (or multiple tag box) like this:
 
 	```html
 	<div id="tagBox">preexisting-tag</div>
 	```
 
-1. **Add** to your main JavaScript file:
+3. **Add** to your main JavaScript file:
 
 	```js
 	$("#tagBox").tagging(my_custom_options);
@@ -98,7 +98,7 @@ In this way, we customize the **global behavior** of taggingJS for
 	id="tagBox">preexisting-tag</div>
 	```
 
-1. **Add** to your main JavaScript file:
+2. **Add** to your main JavaScript file:
 
 	```js
 	$("#tagBox").tagging();
@@ -120,14 +120,14 @@ In this way, we **mix** data attributes and options object to customize taggingJ
 	id="tagBox1">preexisting-tag</div>
 	```
 
-1. **Create *another* tag box** with no `data` attributes:
+2. **Create *another* tag box** with no `data` attributes:
 
 	```html
 	<div id="tagBox1" class="tag-box">preexisting-tag</div>
 	```
 
-1. **Create a custom options** `object`, like this `my_custom_options` (see [Available Options](#available-options)):
-	
+3. **Create a custom options** `object`, like this `my_custom_options` (see [Available Options](#available-options)):
+
 	```js
 	var my_custom_options = {
 		"no-duplicate": false,
@@ -136,7 +136,7 @@ In this way, we **mix** data attributes and options object to customize taggingJ
 	};
 	```
 
-1. **Add** to your main JavaScript file
+4. **Add** to your main JavaScript file
 
 	```js
 	$(".tag-box").tagging(my_custom_options);
@@ -161,199 +161,32 @@ Now you may see that:
 Below there are the **available options to customize taggingJS** with a
 little description, a `type` and the default value:
 
-#### case-sensitive ####
-
-Type: `Boolean`
-
-Default: `false`
-
-If `false`, all text is treated like lowercase.
-
-#### close-char ####
-
-Type: `String`
-
-Default: `"&times;"`
-
-Single Tag close character.
-
-#### close-class ####
-
-Type: `String`
-
-Default: `"tag-i"`
-
-Single Tag close class.
-
-#### edit-on-delete ####
-
-Type: `Boolean`
-
-Default: `true`
-
-`true` to edit tag that has just been removed from tag box.
-
-#### forbidden-chars ####
-
-Type: `Array`
-
-Default: `["," , ".", "_", "?"]`
-
-Array of forbidden characters.
-
-#### forbidden-chars-callback ####
-
-Type: `Function`
-
-Default: `window.alert`
-
-Function to call when is detected a forbidden character.
-
-#### forbidden-chars-text ####
-
-Type: `String`
-
-Default: `"Forbidden character:"`
-
-Basic text passed to `forbidden-chars-callback`.
-
-#### forbidden-words ####
-
-Type: `Array`
-
-Default: `[]`
-
-Array of forbidden words.
-
-#### forbidden-words-callback ####
-
-Type: `Function`
-
-Default: `window.alert`
-
-Function to call when is detected a forbidden words.
-
-#### forbidden-words-text ####
-
-Type: `String`
-
-Default: `"Forbidden word:"`
-
-Basic text passed to `forbidden-words-callback`.
-
-#### no-backspace ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Backspace key remove last tag by default, `true` to avoid that.
-
-#### no-comma ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Comma `","` key add a new tag by default, `true` to avoid that.
-
-#### no-del ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Del key remove last tag by default, `true` to avoid that.
-
-#### no-duplicate ####
-
-Type: `Boolean`
-
-Default: `true`
-
-If `true`, there will be no duplicate tag's name in the tag box.
-
-#### no-duplicate-callback ####
-
-Type: `Function`
-
-Default: `window.alert`
-
-Function to call when is detected a duplicate tag.
-
-#### no-duplicate-text ####
-
-Type: `String`
-
-Default: `"Duplicate tag:"`
-
-Basic text passed to `no-duplicate-callback`.
-
-#### no-enter ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Enter key add a new tag by default, `true` to avoid that.
-
-#### no-spacebar ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Spacebar key add a new tag by default. `true` to avoid that.
-
-#### pre-tags-separator ####
-
-Type: `String`
-
-Default: `", "`
-
-This is used to `split` the initial text and add `preexistint-tag`.
-By default, you must put new tags using a comma and a space (`", "`).
-
-#### tag-box-class ####
-
-Type: `String`
-
-Default: `"tagging"`
-
-Class of the tag box.
-
-#### tag-char ####
-
-Type: `String`
-
-Default: `"#"`
-
-Single Tag char.
-
-#### tag-class ####
-
-Type: `String`
-
-Default: `"tag"`
-
-Single Tag class.
-
-#### tags-input-name ####
-
-Type: `String`
-
-Default: `"tag"`
-
-Name to use as `name=""` in single tags' input.
-By default, all tags being passed as array like `tag[]`.
-
-#### type-zone-class ####
-
-Type: `String`
-
-Default: `"type-zone"`
-
-Class of the type-zone.
+| Option | Type | Default | Description |
+| ------ | ---- | ------- | ----------- |
+| **case-sensitive** | `Boolean` | `false` | If `false`, all text is treated like lowercase. |
+| **close-char** | `String` | `"&times;"` | Single Tag close character. |
+| **close-class** | `String` | `"tag-i"` | Single Tag close class. |
+| **edit-on-delete** | `Boolean` | `true` | `true` to edit tag that has just been removed from tag box. |
+| **forbidden-chars** | `Array` | `["," , ".", "_", "?"]` | Array of forbidden characters. |
+| **forbidden-chars-callback** | `Function` | `window.alert` | Function to call when is detected a forbidden character. |
+| **forbidden-chars-text** | `String` | `"Forbidden character:"` | Basic text passed to `forbidden-chars-callback`. |
+| **forbidden-words** | `Array` | `[]` | Array of forbidden words. |
+| **forbidden-words-callback** | `Function` | `window.alert` | Function to call when is detected a forbidden words. |
+| **forbidden-words-text** | `String` | `"Forbidden word:"` | Basic text passed to `forbidden-words-callback`. |
+| **no-backspace** | `Boolean` | `false` | Backspace key remove last tag by default, `true` to avoid that. |
+| **no-comma** | `Boolean` | `false` | Comma `","` key add a new tag by default, `true` to avoid that. |
+| **no-del** | `Boolean` | `false` | Del key remove last tag by default, `true` to avoid that. |
+| **no-duplicate** | `Boolean` | `true` | If `true`, there will be no duplicate tag's name in the tag box. |
+| **no-duplicate-callback** | `Function` | `window.alert` | Function to call when is detected a duplicate tag. |
+| **no-duplicate-text** | `String` | `"Duplicate tag:"` | Basic text passed to `no-duplicate-callback`. |
+| **no-enter** | `Boolean` | `false` | Enter key add a new tag by default, `true` to avoid that. |
+| **no-spacebar** | `Boolean` | `false` | Spacebar key add a new tag by default. `true` to avoid that.|
+| **pre-tags-separator** | `String` | `", "` | This is used to `split` the initial text and add `preexistint-tag`. By default, you must put new tags using a comma and a space (`", "`). |
+| **tag-box-class** | `String` | `"tagging"` | Class of the tag box. |
+| **tag-char** | `String` | `"#"` | Single Tag char. |
+| **tag-class** | `String` | `"tag"` | Single Tag class. |
+| **tags-input-name** | `String` | `"tag"` | Name to use as `name=""` in single tags' input. By default, all tags being passed as array like `tag[]`. |
+| **type-zone-class** | `String` | `"type-zone"` | Class of the type-zone. |
 
 ## Contribute ##
 
@@ -361,11 +194,11 @@ Class of the type-zone.
 
 1. Fork the repository;
 
-1. Open a shell in project's directory;
+2. Open a shell in project's directory;
 
-1. Type `npm install` (make sure you have installed [nodeJS](nodejs.org));
+3. Type `npm install` (make sure you have installed [nodeJS](nodejs.org));
 
-1. Type `grunt` to execute the default script (without minification),
+4. Type `grunt` to execute the default script (without minification),
 `grunt dist` to also minify the script (make sure you have installed [Grunt](gruntjs.com)).
 
 ### JavaScript Style Guide ###
