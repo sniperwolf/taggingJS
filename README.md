@@ -127,7 +127,7 @@ In this way, we **mix** data attributes and options object to customize taggingJ
 	```
 
 1. **Create a custom options** `object`, like this `my_custom_options` (see [Available Options](#available-options)):
-	
+
 	```js
 	var my_custom_options = {
 		"no-duplicate": false,
@@ -161,199 +161,32 @@ Now you may see that:
 Below there are the **available options to customize taggingJS** with a
 little description, a `type` and the default value:
 
-#### case-sensitive ####
-
-Type: `Boolean`
-
-Default: `false`
-
-If `false`, all text is treated like lowercase.
-
-#### close-char ####
-
-Type: `String`
-
-Default: `"&times;"`
-
-Single Tag close character.
-
-#### close-class ####
-
-Type: `String`
-
-Default: `"tag-i"`
-
-Single Tag close class.
-
-#### edit-on-delete ####
-
-Type: `Boolean`
-
-Default: `true`
-
-`true` to edit tag that has just been removed from tag box.
-
-#### forbidden-chars ####
-
-Type: `Array`
-
-Default: `["," , ".", "_", "?"]`
-
-Array of forbidden characters.
-
-#### forbidden-chars-callback ####
-
-Type: `Function`
-
-Default: `window.alert`
-
-Function to call when is detected a forbidden character.
-
-#### forbidden-chars-text ####
-
-Type: `String`
-
-Default: `"Forbidden character:"`
-
-Basic text passed to `forbidden-chars-callback`.
-
-#### forbidden-words ####
-
-Type: `Array`
-
-Default: `[]`
-
-Array of forbidden words.
-
-#### forbidden-words-callback ####
-
-Type: `Function`
-
-Default: `window.alert`
-
-Function to call when is detected a forbidden words.
-
-#### forbidden-words-text ####
-
-Type: `String`
-
-Default: `"Forbidden word:"`
-
-Basic text passed to `forbidden-words-callback`.
-
-#### no-backspace ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Backspace key remove last tag by default, `true` to avoid that.
-
-#### no-comma ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Comma `","` key add a new tag by default, `true` to avoid that.
-
-#### no-del ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Del key remove last tag by default, `true` to avoid that.
-
-#### no-duplicate ####
-
-Type: `Boolean`
-
-Default: `true`
-
-If `true`, there will be no duplicate tag's name in the tag box.
-
-#### no-duplicate-callback ####
-
-Type: `Function`
-
-Default: `window.alert`
-
-Function to call when is detected a duplicate tag.
-
-#### no-duplicate-text ####
-
-Type: `String`
-
-Default: `"Duplicate tag:"`
-
-Basic text passed to `no-duplicate-callback`.
-
-#### no-enter ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Enter key add a new tag by default, `true` to avoid that.
-
-#### no-spacebar ####
-
-Type: `Boolean`
-
-Default: `false`
-
-Spacebar key add a new tag by default. `true` to avoid that.
-
-#### pre-tags-separator ####
-
-Type: `String`
-
-Default: `", "`
-
-This is used to `split` the initial text and add `preexistint-tag`.
-By default, you must put new tags using a comma and a space (`", "`).
-
-#### tag-box-class ####
-
-Type: `String`
-
-Default: `"tagging"`
-
-Class of the tag box.
-
-#### tag-char ####
-
-Type: `String`
-
-Default: `"#"`
-
-Single Tag char.
-
-#### tag-class ####
-
-Type: `String`
-
-Default: `"tag"`
-
-Single Tag class.
-
-#### tags-input-name ####
-
-Type: `String`
-
-Default: `"tag"`
-
-Name to use as `name=""` in single tags' input.
-By default, all tags being passed as array like `tag[]`.
-
-#### type-zone-class ####
-
-Type: `String`
-
-Default: `"type-zone"`
-
-Class of the type-zone.
+| Option | Type | Default | Description |
+| ------ | ---- | ------- | ----------- |
+| **case-sensitive** | `Boolean` | `false` | If `false`, all text is treated like lowercase. |
+| **close-char** | `String` | `"&times;"` | Single Tag close character. |
+| **close-class** | `String` | `"tag-i"` | Single Tag close class. |
+| **edit-on-delete** | `Boolean` | `true` | `true` to edit tag that has just been removed from tag box. |
+| **forbidden-chars** | `Array` | `["," , ".", "_", "?"]` | Array of forbidden characters. |
+| **forbidden-chars-callback** | `Function` | `window.alert` | Function to call when is detected a forbidden character. |
+| **forbidden-chars-text** | `String` | `"Forbidden character:"` | Basic text passed to `forbidden-chars-callback`. |
+| **forbidden-words** | `Array` | `[]` | Array of forbidden words. |
+| **forbidden-words-callback** | `Function` | `window.alert` | Function to call when is detected a forbidden words. |
+| **forbidden-words-text** | `String` | `"Forbidden word:"` | Basic text passed to `forbidden-words-callback`. |
+| **no-backspace** | `Boolean` | `false` | Backspace key remove last tag by default, `true` to avoid that. |
+| **no-comma** | `Boolean` | `false` | Comma `","` key add a new tag by default, `true` to avoid that. |
+| **no-del** | `Boolean` | `false` | Del key remove last tag by default, `true` to avoid that. |
+| **no-duplicate** | `Boolean` | `true` | If `true`, there will be no duplicate tag's name in the tag box. |
+| **no-duplicate-callback** | `Function` | `window.alert` | Function to call when is detected a duplicate tag. |
+| **no-duplicate-text** | `String` | `"Duplicate tag:"` | Basic text passed to `no-duplicate-callback`. |
+| **no-enter** | `Boolean` | `false` | Enter key add a new tag by default, `true` to avoid that. |
+| **no-spacebar** | `Boolean` | `false` | Spacebar key add a new tag by default. `true` to avoid that.|
+| **pre-tags-separator** | `String` | `", "` | This is used to `split` the initial text and add `preexistint-tag`. By default, you must put new tags using a comma and a space (`", "`). |
+| **tag-box-class** | `String` | `"tagging"` | Class of the tag box. |
+| **tag-char** | `String` | `"#"` | Single Tag char. |
+| **tag-class** | `String` | `"tag"` | Single Tag class. |
+| **tags-input-name** | `String` | `"tag"` | Name to use as `name=""` in single tags' input. By default, all tags being passed as array like `tag[]`. |
+| **type-zone-class** | `String` | `"type-zone"` | Class of the type-zone. |
 
 ## Contribute ##
 
