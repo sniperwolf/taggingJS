@@ -35,130 +35,132 @@ your page;
 The `data-tags-input-name="tag"` is the `name` attribute used by each input
 inside the `tagBox`.
 
-### Manipulate tags ###
+### Manipulate tags with methods ###
 
 Here there are some common pattern to Manipulate tags inside the tag box:
 
 N.B.: `$tag_box` is the tag box object. To get it:
 
 
-	```js
-		var t, $tag_box;
+```js
+var t, $tag_box;
 
-		// We call taggingJS init on all "#tag" divs
-		t = $( "#tag" ).tagging();
+// We call taggingJS init on all "#tag" divs
+t = $( "#tag" ).tagging();
 
-		// This is the $tag_box object of the first captured div
-		$tag_box = t[0];
+// This is the $tag_box object of the first captured div
+$tag_box = t[0];
+```
 
 #### Get all tags (object)
 
-	```js
-		// To get all tags inside tag box as an array of String
-		$tag_box.tagging( "getTags" );
-		>>> ["preexisting-tag", "another-tag"]
+```js
+// To get all tags inside tag box as an array of String
+$tag_box.tagging( "getTags" );
+>>> ["preexisting-tag", "another-tag"]
 
-		// To get all tags inside tag box as an array of jQuery Object
-		$tag_box.tagging( "getTagsObj" );
-		>>> [x.fn.x.init[1], x.fn.x.init[1]]
-	```
+// To get all tags inside tag box as an array of jQuery Object
+$tag_box.tagging( "getTagsObj" );
+>>> [x.fn.x.init[1], x.fn.x.init[1]]
+```
 
 #### Add new tags
 
-	```js
-		// To add a tag with "A new tag added via JS" as text
-		$tag_box.tagging( "add", "A new tag added via JS" );
-		>>> true
+```js
+// To add a tag with "A new tag added via JS" as text
+$tag_box.tagging( "add", "A new tag added via JS" );
+>>> true
 
-		// To add two tag, one with "tag 1" and the other with "tag 2" as text
-		$tag_box.tagging( "add", ["tag 1", "tag 2"] );
-		>>> ["tag 1", "tag 2"]
-	```
+// To add two tag, one with "tag 1" and the other with "tag 2" as text
+$tag_box.tagging( "add", ["tag 1", "tag 2"] );
+>>> ["tag 1", "tag 2"]
+```
 
 #### Remove tags
 
-	```js
-		// To remove a tag with text "A new tag added via JS" as text
-		$tag_box.tagging( "remove", "A new tag added via JS" );
-		>>> $_obj
+```js
+// To remove a tag with text "A new tag added via JS" as text
+$tag_box.tagging( "remove", "A new tag added via JS" );
+>>> $_obj
 
-		// To remove two tag, one with "tag 1" and the other with "tag 2" as text
-		$tag_box.tagging( "remove", ["tag 1", "tag 2"] );
-		>>> [$_obj]
+// To remove two tag, one with "tag 1" and the other with "tag 2" as text
+$tag_box.tagging( "remove", ["tag 1", "tag 2"] );
+>>> [$_obj]
 
-		// Suppose that $tag is the jQuerify object of a tag inside the tag box, you can also do
-		$tag_box.tagging( "remove", $tag] );
-		>>> $_obj
-	```
+// Suppose that $tag is the jQuerify object of a tag inside the tag box, you can also do
+$tag_box.tagging( "remove", $tag] );
+>>> $_obj
+```
 
 #### Remove all tags
 
-	```js
-		// To remove all tags
-		$tag_box.tagging( "removeAll" );
+```js
+// To remove all tags
+$tag_box.tagging( "removeAll" );
 
-		// or
-		$tag_box.tagging( "reset" );
+// or
+$tag_box.tagging( "reset" );
+```
 
 #### Get Special Keys
 
-	```js
-		// To get special Keys without distinctions
-		$tag_box.tagging( "getSpecialKeys" );
-		>>> Object {comma: 188, enter: 13, spacebar: 32, del: 46, backspace: 8}
+```js
+// To get special Keys without distinctions
+$tag_box.tagging( "getSpecialKeys" );
+>>> Object {comma: 188, enter: 13, spacebar: 32, del: 46, backspace: 8}
 
-		// To get special Keys with distinctions
-		$tag_box.tagging( "getSpecialKeysD" );
-		>>> Object {add: Object, remove: Object}
-	```
+// To get special Keys with distinctions
+$tag_box.tagging( "getSpecialKeysD" );
+>>> Object {add: Object, remove: Object}
+```
 
 #### Add or Remove a Special Key
 
-	```js
-		// To add the "left arrow" as a special key to add a new tag
-		$tag_box.tagging( "addSpecialKeys", [ "add", { left_arrow: 37 } ] );
+```js
+// To add the "left arrow" as a special key to add a new tag
+$tag_box.tagging( "addSpecialKeys", [ "add", { left_arrow: 37 } ] );
 
-		// To add the "right arrow" as a special key to remove a tag
-		$tag_box.tagging( "addSpecialKeys", [ "remove", { right_arrow: 39 } ] );
+// To add the "right arrow" as a special key to remove a tag
+$tag_box.tagging( "addSpecialKeys", [ "remove", { right_arrow: 39 } ] );
 
-		// To remove the "right arrow" as a special key
-		$tag_box.tagging( "removeSpecialKeys", 39 );
-	```
+// To remove the "right arrow" as a special key
+$tag_box.tagging( "removeSpecialKeys", 39 );
+```
 
 #### Disable taggingJS
 
-	```js
-		// To disable taggingJS
-		$tag_box.tagging( "destroy" );
-	```
+```js
+// To disable taggingJS
+$tag_box.tagging( "destroy" );
+```
 
 #### Empty the `type_zone`
 
-	```js
-		// To disable taggingJS
-		$tag_box.tagging( "emptyInput" );
-	```
+```js
+// To disable taggingJS
+$tag_box.tagging( "emptyInput" );
+```
 
 #### Get or Set the value of `type_zone`
 
-	```js
-		// To set "value" as value of the input
-		$tag_box.tagging( "valInput", "value" );
+```js
+// To set "value" as value of the input
+$tag_box.tagging( "valInput", "value" );
 
-		// To get the value of the input
-		$tag_box.tagging( "valInput" );
-	```
+// To get the value of the input
+$tag_box.tagging( "valInput" );
+```
 
 #### Trigger Focus event the `type_zone`
 
-	```js
-		// To Trigger Focus event the input
-		$tag_box.tagging( "focusInput" );
-	```
+```js
+// To Trigger Focus event the input
+$tag_box.tagging( "focusInput" );
+```
 
-Please see all [Avaiable Methods](#avaiable-methods).
+Please, see all [Avaiable Methods](#avaiable-methods).
 
-### Customize
+### Customize ###
 
 There are **several ways** to customize the default behavior of taggingJS:
 
@@ -200,7 +202,7 @@ these are specified `data` attributes (*which may change the behavior*).
 3. **Add** to your main JavaScript file:
 
 	```js
-	$("#tagBox").tagging(my_custom_options);
+	$("#tagBox").tagging( my_custom_options );
 	```
 
 In this way, we customize the **global behavior** of taggingJS for
@@ -262,7 +264,7 @@ In this way, we **mix** data attributes and options object to customize taggingJ
 4. **Add** to your main JavaScript file
 
 	```js
-	$(".tag-box").tagging(my_custom_options);
+	$(".tag-box").tagging( my_custom_options );
 	```
 
 Now you may see that:
@@ -334,6 +336,8 @@ little description, the argument that it can take and the return `type`:
 | **removeSpecialKeys( `[ "type", obj ]` )** | Remove a special key . | `Array` - Where `"type"` is `"add"` or `"remove"`, `obj` is like `{ key_name: key_code }` (it can be also an `Array` of `obj`). | `Object` -  Actually `"type"_key` (`add_key` or `remove_key`). |
 | **reset()** | Remove all tags from tag box's `type_zone` | `void` | `Array` - All removed tags. |
 | **valInput( `text` )** | Get or set the tag box `type_zone`'s value | A `String` to put as tag box `type_zone`'s value. | The value `String` or `$_obj` of tag box's `type_zone`. |
+
+You can find example [here](#manipulate-tags).
 
 ## Contribute ##
 
