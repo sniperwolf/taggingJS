@@ -32,6 +32,7 @@
         this.elem    = elem;          // The tag box
         this.$elem   = $( elem );     // jQuerify tag box
         this.options = options;       // JS custom options
+	this.tags    = [];	      // the tags
         // this.$type_zone = void 0;  // The tag box's input zone
     };
 
@@ -39,9 +40,6 @@
      * taggingJS Prototype
      */
     Tagging.prototype = {
-
-        // We store here all tags
-        tags: [],
 
         // All special Keys
         keys: {
