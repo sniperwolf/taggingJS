@@ -32,7 +32,7 @@
         this.elem    = elem;          // The tag box
         this.$elem   = $( elem );     // jQuerify tag box
         this.options = options;       // JS custom options
-        this.tags = [];				  // The tags
+        this.tags = [];		      // The tags
         // this.$type_zone = void 0;  // The tag box's input zone
     };
 
@@ -64,7 +64,7 @@
             "close-char": "&times;",                        // Single Tag close char
             "close-class": "tag-i",                         // Single Tag close class
             "edit-on-delete": true,                         // True to edit tag that has just been removed from tag box
-            "forbidden-chars": [ ".", "_", "?" ],       	// Array of forbidden characters
+            "forbidden-chars": [ ".", "_", "?" ],           // Array of forbidden characters
             "forbidden-chars-callback": window.alert,       // Function to call when there is a forbidden chars
             "forbidden-chars-text": "Forbidden character:", // Basic text passed to forbidden-chars callback
             "forbidden-words": [],                          // Array of forbidden words
@@ -83,7 +83,7 @@
             "tag-char": "#",                                // Single Tag char
             "tag-class": "tag",                             // Single Tag class
             "tags-input-name": "tag",                       // Name to use as name="" in single tags (by default tag[])
-            "tag-on-blur": true,							// Add the current tag if user clicks away from type-zone
+            "tag-on-blur": true,			    // Add the current tag if user clicks away from type-zone
             "type-zone-class": "type-zone",                 // Class of the type-zone
         },
 
@@ -518,6 +518,7 @@
                 return true;
             });
             
+	    // Add tag on a click away from the type_zone	
             if ( self.config[ "tag-on-blur" ] ) {
             	self.$type_zone.focusout(function(e) {
             		// Get text from current input box
