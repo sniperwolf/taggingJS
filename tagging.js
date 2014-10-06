@@ -687,11 +687,8 @@
         reset: function() {
             // console.log( 'reset' );
 
-            var l;
-
-            l = this.tags.length;
-            while ( l-- ) {
-                this.remove( this.tags[ l ] );
+            while (this.tags.length ) {
+                this.remove( this.tags[ this.tags.length ] );
             }
 
             this.emptyInput();
