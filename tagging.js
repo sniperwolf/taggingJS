@@ -797,7 +797,7 @@
 // jQuery on Ready example
 // (function( $, window, document, undefined ) {
 //     $( document ).ready(function() {
-//         var t = $( ".taggingJS" ).tagging();
+//         var t = $( ".tagging-js" ).tagging();
 //         t[0].addClass( "form-control" );
 //         // console.log( t[0] );
 //     });

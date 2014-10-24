@@ -7,7 +7,7 @@
 **taggingJS** is a jQuery plugin to create an high customizable front-end tag system.
 It is like `5 kb` and [support major browsers](#browser-support) in the world!
 
-Actual version is [`1.3.1`](https://github.com/sniperwolf/taggingJS/releases/tag/v1.3.1).
+Actual version is [`1.3.2`](https://github.com/sniperwolf/taggingJS/releases/tag/v1.3.2).
 
 ![Example Image](example/example_img.png)
 
@@ -309,6 +309,7 @@ a little description and the default value:
 | **tag-box-class** | `String` | `"tagging"` | Class of the tag box. |
 | **tag-char** | `String` | `"#"` | Single Tag char. |
 | **tag-class** | `String` | `"tag"` | Single Tag class. |
+| **tag-on-blur** | `Boolean` | `true` | If `true`, clicking away from the `$type_zone` will add a new tag. |
 | **tags-input-name** | `String` | `"tag"` | Name to use as `name=""` in single tags' input. By default, all tags being passed as array like `tag[]`. |
 | **type-zone-class** | `String` | `"type-zone"` | Class of the type-zone. |
 
@@ -373,6 +374,11 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 (C) Fabrizio Fallico 2014, released under the [MIT license](LICENSE.md).
 
 ## Changelog (v1.3.X) ##
+
+### 1.3.2 - [Oct 24, 2014]
+
+* Now you can add tags clicking away from the `$type_zone` (see [Available Options](#available-options)).
+* Fix [#22](https://github.com/sniperwolf/taggingJS/issues/22), Fix [#24](https://github.com/sniperwolf/taggingJS/issues/24), Fix [#26](https://github.com/sniperwolf/taggingJS/issues/26), Fix [#28](https://github.com/sniperwolf/taggingJS/issues/28) issues.
 
 ### 1.3.1 - [Apr 28, 2014]
 
