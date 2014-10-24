@@ -7,7 +7,7 @@
 **taggingJS** is a jQuery plugin to create an high customizable front-end tag system.
 It is like `5 kb` and [support major browsers](#browser-support) in the world!
 
-Actual version is [`1.3.2`](https://github.com/sniperwolf/taggingJS/releases/tag/v1.3.2).
+Actual version is [`1.3.3`](https://github.com/sniperwolf/taggingJS/releases/tag/v1.3.3).
 
 ![Example Image](example/example_img.png)
 
@@ -375,7 +375,7 @@ Supports all major browsers in the world (`IE 6+`, `Mozilla Firefox 1+`,
 
 ## Changelog (v1.3.X) ##
 
-### 1.3.2 - [Oct 24, 2014]
+### 1.3.3 - [Oct 24, 2014]
 
 * Now you can add tags clicking away from the `$type_zone` (see [Available Options](#available-options)).
 * Fix [#22](https://github.com/sniperwolf/taggingJS/issues/22), Fix [#24](https://github.com/sniperwolf/taggingJS/issues/24), Fix [#26](https://github.com/sniperwolf/taggingJS/issues/26), Fix [#28](https://github.com/sniperwolf/taggingJS/issues/28) issues.
