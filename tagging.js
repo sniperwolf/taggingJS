@@ -32,6 +32,7 @@
         this.elem    = elem;          // The tag box
         this.$elem   = $( elem );     // jQuerify tag box
         this.options = options;       // JS custom options
+        this.tags = [];		      // The tags
         // this.$type_zone = void 0;  // The tag box's input zone
     };
 
@@ -40,9 +41,7 @@
      */
     Tagging.prototype = {
 
-        // We store here all tags
-        tags: [],
-
+        
         // All special Keys
         keys: {
             // Special keys to add a tag
@@ -84,6 +83,7 @@
             "tag-char": "#",                                // Single Tag char
             "tag-class": "tag",                             // Single Tag class
             "tags-input-name": "tag",                       // Name to use as name="" in single tags (by default tag[])
+            "tag-on-blur": true,			    // Add the current tag if user clicks away from type-zone
             "type-zone-class": "type-zone",                 // Class of the type-zone
         },
 
@@ -178,7 +178,7 @@
             // Creating a new div for the new tag
             $tag = $( document.createElement( "div" ) )
                         .addClass( self.config[ "tag-class" ] )
-                        .html( "<span>" + self.config[ "tag-char" ] + "</span> " + text );
+                        .html( text );
 
             // Creating and Appending hidden input
             $( document.createElement( "input" ) )
@@ -209,9 +209,10 @@
             self.tags.push( $tag );
 
             // Adding tag in the type zone
-            self.$type_zone.before( $tag );
-
-            return true;
+           
+            	 self.$type_zone.before( $tag );
+            		
+            	 return true;
         },
 
         /**
@@ -516,7 +517,21 @@
                 // Exit with success
                 return true;
             });
-
+            
+	    // Add tag on a click away from the type_zone	
+            if ( self.config[ "tag-on-blur" ] ) {
+            	self.$type_zone.focusout(function(e) {
+            		// Get text from current input box
+            		text = self.valInput();
+            		// If text is empty, then continue focusout
+            		if ( ! text || ! text.length ) {
+            			return false;
+            		}
+            		// Otherwise add the tag first
+	           return self.add();
+            	});
+            }
+            
             // On click, we focus the type_zone
             self.$elem.on( "click", function() {
                 self.focusInput();
@@ -785,3 +800,4 @@
 //         // console.log( t[0] );
 //     });
 // })( window.jQuery, window, document );
+
