@@ -7,7 +7,7 @@
 **taggingJS** is a jQuery plugin to create an high customizable front-end tag system.
 It is like `5 kb` and [support major browsers](#browser-support) in the world!
 
-Actual version is `1.3.1`.
+Actual version is [`1.3.1`](https://github.com/sniperwolf/taggingJS/releases/tag/v1.3.1).
 
 ![Example Image](example/example_img.png)
 
@@ -37,10 +37,9 @@ inside the `tagBox`.
 
 ### Manipulate tags with methods ###
 
-Here there are some common pattern to Manipulate tags inside the tag box:
+Here there are some **common pattern** to manipulate tags inside the tag box:
 
-N.B.: `$tag_box` is the tag box object. To get it:
-
+**N.B.**: `$tag_box` is the tag box object. To get it:
 
 ```js
 var t, $tag_box;
@@ -158,7 +157,7 @@ $tag_box.tagging( "valInput" );
 $tag_box.tagging( "focusInput" );
 ```
 
-Please, see all [Avaiable Methods](#avaiable-methods).
+Please, see all [Available Methods](#available-methods).
 
 ### Customize ###
 
