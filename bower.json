@@ -1,0 +1,16 @@
+{
+  "name": "taggingJS",
+  "version": "1.3.1",
+  "main": ["tagging.js", "example/tag-basic-style.css"],
+  "ignore": [
+    "**/.*",
+    "*.html",
+    "*.md",
+    "*.json",
+    "*.min.js",
+    "test"
+  ],
+  "dependencies": {
+    "jquery": "1.x"
+  }
+}
