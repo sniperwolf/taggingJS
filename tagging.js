@@ -1,4 +1,4 @@
-// taggingJS v1.3.2
+// taggingJS v1.3.3
 //    2014-10-24
 
 // Copyright (c) 2014 Fabrizio Fallico
