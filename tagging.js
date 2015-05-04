@@ -211,6 +211,9 @@
             // Adding tag in the type zone
             self.$type_zone.before( $tag );
 
+            // Trigger after event
+            self.$elem.trigger("add:after", [text, self]);
+            
             return true;
         },
 
@@ -642,6 +645,9 @@
                 // Set the new text
                 self.valInput( $tag.pure_text );
             }
+
+            // Trigger after event
+            self.$elem.trigger("remove:after", [text, self]);
 
             return $tag;
 
