@@ -123,7 +123,7 @@ $tag_box.tagging( "addSpecialKeys", [ "add", { left_arrow: 37 } ] );
 $tag_box.tagging( "addSpecialKeys", [ "remove", { right_arrow: 39 } ] );
 
 // To remove the "right arrow" as a special key
-$tag_box.tagging( "removeSpecialKeys", 39 );
+$tag_box.tagging( "removeSpecialKeys", ["remove", 39] );
 ```
 
 #### Disable taggingJS
