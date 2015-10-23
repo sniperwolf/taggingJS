@@ -80,10 +80,12 @@
             "no-spacebar": false,                           // Spacebar key add a new tag by default, true to avoid that
             "pre-tags-separator": ", ",                     // By default, you must put new tags using a new line
             "tag-box-class": "tagging",                     // Class of the tag box
+            "tag-box-editable-class": "editable",           // Class of the tag box when editable, used together with tags-limit option for css targeting
             "tag-char": "#",                                // Single Tag char
             "tag-class": "tag",                             // Single Tag class
             "tags-input-name": "tag",                       // Name to use as name="" in single tags (by default tag[])
             "tag-on-blur": true,                            // Add the current tag if user clicks away from type-zone
+            "tags-limit": 0,                                // Limit the number of tags that can be added, zero means no limit
             "type-zone-class": "type-zone",                 // Class of the type-zone
         },
 
@@ -210,6 +212,16 @@
 
             // Adding tag in the type zone
             self.$type_zone.before( $tag );
+
+            // Hide the type zone if we already have a maximum number of tags
+            if ( self.config[ "tags-limit" ] > 0 && self.tags.length >= self.config[ "tags-limit" ] ) {
+
+                // Remove editable class for css targeting
+                self.$elem.removeClass( self.config[ "tag-box-editable-class" ] );
+
+                // Hide the type zone
+                self.$type_zone.hide();
+            }
 
             return true;
         },
@@ -407,9 +419,10 @@
                              .addClass( self.config[ "type-zone-class" ] )
                              .attr( "contenteditable", true );
 
-            // Adding tagging class and appending the type zone
+            // Adding tagging and editable class and appending the type zone
             self.$elem
                 .addClass( self.config[ "tag-box-class" ] )
+                .addClass( self.config[ "tag-box-editable-class" ] )
                 .append( self.$type_zone );
 
             // Keydown event listener on tag box type_zone
@@ -641,6 +654,16 @@
 
                 // Set the new text
                 self.valInput( $tag.pure_text );
+            }
+
+            // Show the type zone if we no longer have a maximum number of tags
+            if ( self.config[ "tags-limit" ] > 0 && self.$type_zone.not(":visible") && self.tags.length < self.config[ "tags-limit" ] ) {
+
+                // Add editable class for css targeting
+                self.$elem.addClass( self.config[ "tag-box-editable-class" ] );
+
+                // Show the type zone
+                self.$type_zone.show();
             }
 
             return $tag;

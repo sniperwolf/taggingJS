@@ -1,10 +1,13 @@
 /* Tagging Basic Style */
 .tagging {
 	border: 1px solid #CCCCCC;
-	cursor: text;
 	font-size: 1em;
 	height: auto;
 	padding: 10px 10px 15px;
+}
+
+.tagging.editable {
+	cursor: text;
 }
 
 .tag {

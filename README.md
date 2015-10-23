@@ -307,10 +307,12 @@ a little description and the default value:
 | **no-spacebar** | `Boolean` | `false` | Spacebar key add a new tag by default. `true` to avoid that.|
 | **pre-tags-separator** | `String` | `", "` | This is used to `split` the initial text and add `preexistint-tag`. By default, you must put new tags using a comma and a space (`", "`). |
 | **tag-box-class** | `String` | `"tagging"` | Class of the tag box. |
+| **tag-box-editable-class** | `String` | `"editable"` | Class of the tag box when editable, used together with tags-limit option for css targeting. |
 | **tag-char** | `String` | `"#"` | Single Tag char. |
 | **tag-class** | `String` | `"tag"` | Single Tag class. |
 | **tag-on-blur** | `Boolean` | `true` | If `true`, clicking away from the `$type_zone` will add a new tag. |
 | **tags-input-name** | `String` | `"tag"` | Name to use as `name=""` in single tags' input. By default, all tags being passed as array like `tag[]`. |
+| **tags-limit** | `Integer` | `0` | Limit the number of tags that can be added, zero for no limit. |
 | **type-zone-class** | `String` | `"type-zone"` | Class of the type-zone. |
 
 ## Available Methods ##
