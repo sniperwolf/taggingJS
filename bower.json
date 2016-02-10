@@ -11,6 +11,6 @@
     "test"
   ],
   "dependencies": {
-    "jquery": "1.x"
+    "jquery": ">=1.5"
   }
 }
