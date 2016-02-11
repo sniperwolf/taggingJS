@@ -75,7 +75,7 @@ $tag_box.tagging( "add", ["tag 1", "tag 2"] );
 >>> ["tag 1", "tag 2"]
 ```
 
-#### Remove tags
+#### Remove a tag
 
 ```js
 // To remove a tag with text "A new tag added via JS" as text
@@ -155,6 +155,20 @@ $tag_box.tagging( "valInput" );
 ```js
 // To Trigger Focus event the input
 $tag_box.tagging( "focusInput" );
+```
+
+#### Detect when a Tag is Added or Removed
+
+```js
+// Execute callback when a tag is added
+$tag_box.on( "add:after", function ( el, text, tagging ) {
+  console.log( "Added tag: ", text );
+});
+
+// Execute callback when a tag is removed
+$tag_box.on( "remove:after", function ( el, text, tagging ) {
+  console.log( "Removed tag: ", text );
+});
 ```
 
 Please, see all [Available Methods](#available-methods).
@@ -321,6 +335,7 @@ little description, the argument that it can take and the return `type`:
 | Method | Description | Argument | Return |
 | ------ | ----------- | -------- | ------ |
 | **add( `text` or `[text]` )** | Add a new tag. | A `String` (or an `Array` of `String`) to add as tag, if `null` we get the content of tag box `type_zone`. | `Boolean` or `Funtion` |
+| **add:after( `function` )** | Execute the function after add a Tag. | Depends on the `function` used as callback. | `Generic` |
 | **addSpecialKeys( `[ "type", obj ]` )** | Add a special keys to add or remove a tag. | `Array` - Where `"type"` is `"add"` or `"remove"`, `obj` is like `{ key_name: key_code }` (it can be also an `Array` of `obj`). | A `String` for error or `Object`  Actually `"type"_key` (`add_key` or `remove_key`). |
 | **destroy()** | Remove `type_zone`, all tags and other things. | `void` | `Boolean` |
 | **emptyInput()** | Empty tag box's `type_zone`. | `void` | `$_obj` - The jQuerified `type_zone` itself. |
@@ -332,6 +347,7 @@ little description, the argument that it can take and the return `type`:
 | **init()** | Init method to bootstrap all things | `void` | `$_obj` - The jQuerify tag box. |
 | **refresh( `text` )** | Remove and insert all tag | A `String` with all tags separated by `pre-tags-separator` option value (if `null`, we call `getTags` method) | `Boolean` |
 | **remove( `text` or `$_obj` )** | Remove last tag or the specified ones in tag box's `type_zone`. | A `String` or `$_obj` (or an `Array` of them) of the tag to remove. | A `String` with error message  or `$_obj` of the removed tag. |
+| **remove:after( `function` )** | Execute the function after remove a Tag. | Depends on the `function` used as callback. | `Generic` |
 | **removeAll()** | Alias of reset | `void` | `Array` - All removed tags. |
 | **removeSpecialKeys( `[ "type", obj ]` )** | Remove a special key . | `Array` - Where `"type"` is `"add"` or `"remove"`, `obj` is like `{ key_name: key_code }` (it can be also an `Array` of `obj`). | `Object` -  Actually `"type"_key` (`add_key` or `remove_key`). |
 | **reset()** | Remove all tags from tag box's `type_zone` | `void` | `Array` - All removed tags. |
