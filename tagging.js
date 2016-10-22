@@ -46,15 +46,15 @@
         keys: {
             // Special keys to add a tag
             add: {
-                comma:    188,
-                enter:    13,
-                spacebar: 32,
+                comma:    ",",
+                enter:    "Enter",
+                spacebar: " ",
             },
 
             // Special keys to remove last tag
             remove: {
-                del: 46,
-                backspace: 8,
+                del: "Delete",
+                backspace: "Backspace",
             }
         },
 
@@ -430,9 +430,9 @@
                 actual_text     = self.valInput();
 
                 // The pressed key
-                pressed_key     = e.which;
-
-                // console.log( pressed_key );
+                //pressed_key     = e.which;
+				pressed_key     = e.key;
+                //console.log( pressed_key );
 
                 // For in loop to look to Remove Keys
                 if ( ! actual_text ) {
