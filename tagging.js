@@ -213,6 +213,7 @@
             // Adding tag in the type zone
             self.$type_zone.before( $tag );
 
+<<<<<<< HEAD
             // Hide the type zone if we already have a maximum number of tags
             if ( self.config[ "tags-limit" ] > 0 && self.tags.length >= self.config[ "tags-limit" ] ) {
 
@@ -223,6 +224,11 @@
                 self.$type_zone.hide();
             }
 
+=======
+            // Trigger after event
+            self.$elem.trigger("add:after", [text, self]);
+            
+>>>>>>> refs/remotes/origin/master
             return true;
         },
 
@@ -656,6 +662,7 @@
                 self.valInput( $tag.pure_text );
             }
 
+<<<<<<< HEAD
             // Show the type zone if we no longer have a maximum number of tags
             if ( self.config[ "tags-limit" ] > 0 && self.$type_zone.not(":visible") && self.tags.length < self.config[ "tags-limit" ] ) {
 
@@ -665,6 +672,10 @@
                 // Show the type zone
                 self.$type_zone.show();
             }
+=======
+            // Trigger after event
+            self.$elem.trigger("remove:after", [text, self]);
+>>>>>>> refs/remotes/origin/master
 
             return $tag;
 
