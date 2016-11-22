@@ -40,21 +40,19 @@
      * taggingJS Prototype
      */
     Tagging.prototype = {
-
-
         // All special Keys
         keys: {
             // Special keys to add a tag
             add: {
                 comma:    ",",
                 enter:    "Enter",
-                spacebar: " ",
+                spacebar: " "
             },
 
             // Special keys to remove last tag
             remove: {
                 del: "Delete",
-                backspace: "Backspace",
+                backspace: "Backspace"
             }
         },
 
@@ -86,7 +84,7 @@
             "tags-input-name": "tag",                       // Name to use as name="" in single tags (by default tag[])
             "tag-on-blur": true,                            // Add the current tag if user clicks away from type-zone
             "tags-limit": 0,                                // Limit the number of tags that can be added, zero means no limit
-            "type-zone-class": "type-zone",                 // Class of the type-zone
+            "type-zone-class": "type-zone"                 // Class of the type-zone
         },
 
         /**
@@ -224,7 +222,7 @@
             }
 
             // Trigger after event
-            self.$elem.trigger("add:after", [text, self]);
+            self.$elem.trigger( "add:after", [ text, self ] );
 
             return true;
         },
@@ -660,7 +658,7 @@
             }
 
             // Show the type zone if we no longer have a maximum number of tags
-            if ( self.config[ "tags-limit" ] > 0 && self.$type_zone.not(":visible") && self.tags.length < self.config[ "tags-limit" ] ) {
+            if ( self.config[ "tags-limit" ] > 0 && self.$type_zone.not( ":visible" ) && self.tags.length < self.config[ "tags-limit" ] ) {
 
                 // Add editable class for css targeting
                 self.$elem.addClass( self.config[ "tag-box-editable-class" ] );
@@ -670,7 +668,7 @@
             }
 
             // Trigger after event
-            self.$elem.trigger("remove:after", [text, self]);
+            self.$elem.trigger( "remove:after", [ text, self ] );
 
             return $tag;
 
@@ -716,7 +714,7 @@
 
                     // If the key_code is equal to the actual key_code
                     if ( self.keys[ type ][ value ] === key_code ) {
-                        // We set to undefined the property
+                        // Set to undefined the property
                         self.keys[ type ][ value ] = undefined;
                     }
                 }
@@ -733,7 +731,7 @@
         reset: function() {
             // console.log( 'reset' );
 
-            while (this.tags.length ) {
+            while ( this.tags.length ) {
                 this.remove( this.tags[ this.tags.length ] );
             }
 
@@ -771,7 +769,7 @@
 
             return this.$type_zone.val( text );
 
-        },
+        }
 
     };
 
@@ -813,9 +811,9 @@
             }
         });
 
-        if ( typeof arg1 === "string") {
+        if ( typeof arg1 === "string" ) {
             // Return the results from the invoked function calls
-            return ( results.length > 1 ) ? results : results[0];
+            return ( results.length > 1 ) ? results : results[ 0 ];
         }
 
         return results;

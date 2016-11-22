@@ -1,5 +1,5 @@
 // taggingJS v1.3.3
-//    2014-04-28
+//    2015-05-04
 
 // Copyright (c) 2014 Fabrizio Fallico
 
@@ -40,21 +40,19 @@
      * taggingJS Prototype
      */
     Tagging.prototype = {
-
-
         // All special Keys
         keys: {
             // Special keys to add a tag
             add: {
-                comma:    188,
-                enter:    13,
-                spacebar: 32,
+                comma:    ",",
+                enter:    "Enter",
+                spacebar: " "
             },
 
             // Special keys to remove last tag
             remove: {
-                del: 46,
-                backspace: 8,
+                del: "Delete",
+                backspace: "Backspace"
             }
         },
 
@@ -80,11 +78,13 @@
             "no-spacebar": false,                           // Spacebar key add a new tag by default, true to avoid that
             "pre-tags-separator": ", ",                     // By default, you must put new tags using a new line
             "tag-box-class": "tagging",                     // Class of the tag box
+            "tag-box-editable-class": "editable",           // Class of the tag box when editable, used together with tags-limit option for css targeting
             "tag-char": "#",                                // Single Tag char
             "tag-class": "tag",                             // Single Tag class
             "tags-input-name": "tag",                       // Name to use as name="" in single tags (by default tag[])
             "tag-on-blur": true,                            // Add the current tag if user clicks away from type-zone
-            "type-zone-class": "type-zone",                 // Class of the type-zone
+            "tags-limit": 0,                                // Limit the number of tags that can be added, zero means no limit
+            "type-zone-class": "type-zone"                 // Class of the type-zone
         },
 
         /**
@@ -210,6 +210,19 @@
 
             // Adding tag in the type zone
             self.$type_zone.before( $tag );
+
+            // Hide the type zone if we already have a maximum number of tags
+            if ( self.config[ "tags-limit" ] > 0 && self.tags.length >= self.config[ "tags-limit" ] ) {
+
+                // Remove editable class for css targeting
+                self.$elem.removeClass( self.config[ "tag-box-editable-class" ] );
+
+                // Hide the type zone
+                self.$type_zone.hide();
+            }
+
+            // Trigger after event
+            self.$elem.trigger( "add:after", [ text, self ] );
 
             return true;
         },
@@ -407,9 +420,10 @@
                              .addClass( self.config[ "type-zone-class" ] )
                              .attr( "contenteditable", true );
 
-            // Adding tagging class and appending the type zone
+            // Adding tagging and editable class and appending the type zone
             self.$elem
                 .addClass( self.config[ "tag-box-class" ] )
+                .addClass( self.config[ "tag-box-editable-class" ] )
                 .append( self.$type_zone );
 
             // Keydown event listener on tag box type_zone
@@ -427,9 +441,9 @@
                 actual_text     = self.valInput();
 
                 // The pressed key
-                pressed_key     = e.which;
-
-                // console.log( pressed_key );
+                //pressed_key     = e.which;
+				pressed_key     = e.key;
+                //console.log( pressed_key );
 
                 // For in loop to look to Remove Keys
                 if ( ! actual_text ) {
@@ -643,6 +657,19 @@
                 self.valInput( $tag.pure_text );
             }
 
+            // Show the type zone if we no longer have a maximum number of tags
+            if ( self.config[ "tags-limit" ] > 0 && self.$type_zone.not( ":visible" ) && self.tags.length < self.config[ "tags-limit" ] ) {
+
+                // Add editable class for css targeting
+                self.$elem.addClass( self.config[ "tag-box-editable-class" ] );
+
+                // Show the type zone
+                self.$type_zone.show();
+            }
+
+            // Trigger after event
+            self.$elem.trigger( "remove:after", [ text, self ] );
+
             return $tag;
 
         },
@@ -687,7 +714,7 @@
 
                     // If the key_code is equal to the actual key_code
                     if ( self.keys[ type ][ value ] === key_code ) {
-                        // We set to undefined the property
+                        // Set to undefined the property
                         self.keys[ type ][ value ] = undefined;
                     }
                 }
@@ -704,7 +731,7 @@
         reset: function() {
             // console.log( 'reset' );
 
-            while (this.tags.length ) {
+            while ( this.tags.length ) {
                 this.remove( this.tags[ this.tags.length ] );
             }
 
@@ -742,7 +769,7 @@
 
             return this.$type_zone.val( text );
 
-        },
+        }
 
     };
 
@@ -784,9 +811,9 @@
             }
         });
 
-        if ( typeof arg1 === "string") {
+        if ( typeof arg1 === "string" ) {
             // Return the results from the invoked function calls
-            return ( results.length > 1 ) ? results : results[0];
+            return ( results.length > 1 ) ? results : results[ 0 ];
         }
 
         return results;
@@ -795,10 +822,10 @@
 })( window.jQuery, window, document );
 
 // jQuery on Ready example
-(function( $, window, document, undefined ) {
-    $( document ).ready(function() {
-        var t = $( ".tagging-js" ).tagging();
-        t[0].addClass( "form-control" );
-        // console.log( t[0] );
-    });
-})( window.jQuery, window, document );
+// (function( $, window, document, undefined ) {
+//     $( document ).ready(function() {
+//         var t = $( ".tagging-js" ).tagging();
+//         t[0].addClass( "form-control" );
+//         // console.log( t[0] );
+//     });
+// })( window.jQuery, window, document );
